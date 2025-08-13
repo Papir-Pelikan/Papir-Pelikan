@@ -628,7 +628,7 @@ img {
 }
 
 .featured-content h1 {
-  font-family: 'Playfair Display', serif;
+  font-family: 'Abril Fatface', serif;
   font-size: 2.5rem;
   font-weight: 700;
   color: #1a1a1a;
@@ -664,3 +664,32 @@ img {
     font-size: 1.1rem;
   }
 }
+    .brown-link {
+        color: #9B5E3A;           /* Meleg, gesztenyebarna – nincs kékes árnyalat */
+        text-decoration: none;    /* Nincs aláhúzás */
+        transition: color 0.2s ease;
+        display: block;           /* FONTOS: az egész blokk legyen kattintható */
+    }
+
+    .brown-link:hover {
+        color: #7D4627;           /* Sötétebb meleg barna hoverkor */
+    }
+
+    /* Plusz biztonság: ha a cím vagy lead szöveg színe nem örökölne, kényszerítsük */
+    .featured-content h1,
+    .featured-content .lead {
+        color: inherit !important; /* Az a:hover színe lesz érvényes */
+        text-decoration: none;
+    }
+
+
+       .brown-link2 {
+        color: #9B5E3A;           /* Meleg, gesztenyebarna – nincs kékes árnyalat */
+        text-decoration: none;    /* Nincs aláhúzás */
+        transition: color 0.2s ease; /* Lágy színváltás hoverkor (opcionális) */
+    }
+
+    .brown-link2:hover {
+        color: #7D4627;           /* Kicsit sötétebb meleg barna kurzor fölé húzáskor */
+        /* text-decoration: underline; */ /* Ha szeretnéd, bekapcsolhatod – de alapból marad ki */
+    }
