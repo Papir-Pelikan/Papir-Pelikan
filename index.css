@@ -237,7 +237,6 @@ nav {
 
 .article {
     width: 300px;
-    background: #fff;
     padding: 10px;
     border-left: 3px dotted #000;
     font-family: 'Abril Fatface', serif;
@@ -437,4 +436,231 @@ nav {
 
 .sunrise-info img, .sunset-info img {
     margin-right: 8px;
+}
+
+/* Alap stílusok maradnak, de hozzáadom a reszponzív részeket */
+
+/* Általános reszponzív beállítások */
+@media (max-width: 1200px) {
+  .content {
+    padding-left: 30px;
+    gap: 20px;
+  }
+  
+  .article {
+    width: 280px;
+  }
+}
+
+@media (max-width: 992px) {
+  header {
+    flex-direction: column;
+    padding: 10px;
+  }
+  
+  .header-content {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
+  
+  #datum-napnev {
+    text-align: center;
+    margin-right: 0;
+    margin-bottom: 10px;
+  }
+  
+  .idojaras {
+    margin-top: 10px;
+  }
+  
+  .content {
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 20px;
+  }
+  
+  .article {
+    width: 45%;
+    min-width: 250px;
+    margin-bottom: 20px;
+  }
+  
+  .pelican-img {
+    position: static;
+    text-align: center;
+    margin-top: 20px;
+  }
+  
+  .pelican-img img {
+    width: 80px;
+  }
+}
+
+@media (max-width: 768px) {
+  nav {
+    flex-direction: column;
+    padding: 10px;
+    gap: 10px;
+  }
+  
+  .nav-left, .nav-right {
+    width: 100%;
+    justify-content: center;
+  }
+  
+  .search-container {
+    flex-direction: column;
+    width: 100%;
+    margin-left: 0;
+  }
+  
+  .search-wrapper, .filter-dropdown {
+    width: 100%;
+  }
+  
+  .search-bar {
+    min-width: auto;
+    width: 100%;
+    box-sizing: border-box;
+  }
+  
+  .nav-item:not(:last-child)::after {
+    display: none;
+  }
+  
+  .title-bar {
+    padding: 10px 5px;
+  }
+  
+  .motto {
+    position: static;
+    max-width: 100%;
+    text-align: center;
+    margin-top: 10px;
+  }
+  
+  .article {
+    width: 100%;
+    max-width: 400px;
+  }
+  
+  .article img {
+    height: auto;
+    max-height: 200px;
+  }
+}
+
+@media (max-width: 576px) {
+  .site-logo img {
+    height: 60px;
+  }
+  
+  .title-bar h1 {
+    font-size: 30px;
+  }
+  
+  .content {
+    padding: 10px;
+  }
+  
+  .article {
+    padding: 8px;
+  }
+  
+  .category {
+    font-size: 11px;
+  }
+  
+  #datum-napnev {
+    font-size: 12px;
+  }
+}
+
+/* Képek reszponzív viselkedése */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.article img {
+  object-fit: cover;
+}
+
+/* Flexbox reszponzív beállítások */
+.header-content, 
+.nav-left, 
+.nav-right, 
+.search-container,
+.main-weather,
+.temp-display,
+.sunrise-info, 
+.sunset-info {
+  flex-wrap: wrap;
+}
+
+/* Kisebb képernyőkön a dátum és névnap egymás alatt */
+@media (max-width: 400px) {
+  #datum-napnev {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+.featured-main-article {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+  text-align: center;
+  border-radius: 12px;
+}
+
+.featured-main-article img {
+  width: 100%;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.featured-content h1 {
+  font-family: 'Playfair Display', serif;
+  font-size: 2.5rem;
+  font-weight: 700;
+  color: #1a1a1a;
+  margin: 12px 0;
+  line-height: 1.2;
+}
+
+.featured-content .lead {
+  font-size: 1.25rem;
+  color: #444;
+  margin: 16px 0;
+  max-width: 800px;
+  line-height: 1.5;
+}
+
+.featured-content .article-meta {
+  font-size: 0.9rem;
+  color: #666;
+  margin-top: 10px;
+}
+
+/* Mobil optimalizálás */
+@media (max-width: 768px) {
+  .featured-main-article {
+    padding: 16px;
+  }
+
+  .featured-content h1 {
+    font-size: 1.8rem;
+  }
+
+  .featured-content .lead {
+    font-size: 1.1rem;
+  }
 }
