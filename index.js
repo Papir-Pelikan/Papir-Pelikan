@@ -410,4 +410,72 @@ document.addEventListener('DOMContentLoaded', function() {
             weatherContainer.classList.toggle('open');
         });
     }
+
+    function updateClock() {
+    const now = new Date();
+    const hours = now.getHours().toString().padStart(2, '0');
+    const minutes = now.getMinutes().toString().padStart(2, '0');
+    const seconds = now.getSeconds().toString().padStart(2, '0');
+    document.getElementById('clock').textContent = `${hours}:${minutes}:${seconds}`;
+}
+
+// Initialize clock and update every second
+updateClock();
+setInterval(updateClock, 1000);
+});
+
+
+
+document.querySelector('.dropdown2-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown2-menu').classList.toggle('show');
+});
+
+document.addEventListener('click', function() {
+    document.querySelector('.dropdown2-menu')?.classList.remove('show');
+});
+
+
+document.querySelector('.dropdown3-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown3-menu').classList.toggle('show');
+});
+
+document.addEventListener('click', function() {
+    document.querySelector('.dropdown3-menu')?.classList.remove('show');
+});
+
+document.querySelector('.dropdown4-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown4-menu').classList.toggle('show');
+});
+
+document.querySelector('.dropdown5-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown5-menu').classList.toggle('show');
+});
+
+document.querySelector('.dropdown6-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown6-menu').classList.toggle('show');
+});
+
+document.querySelector('.dropdown7-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown7-menu').classList.toggle('show');
+});
+
+document.querySelector('.dropdown8-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown8-menu').classList.toggle('show');
+});
+
+document.querySelector('.dropdown9-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown9-menu').classList.toggle('show');
+});
+
+document.querySelector('.dropdown10-toggle')?.addEventListener('click', function(e) {
+    e.stopPropagation();
+    document.querySelector('.dropdown10-menu').classList.toggle('show');
 });

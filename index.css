@@ -39,6 +39,41 @@ nav {
     white-space: nowrap;
 }
 
+/* Add to your existing CSS */
+.nav-item.dropdown {
+    position: relative;
+}
+
+.nav-item.dropdown:hover .dropdown-menu {
+    display: block;
+}
+
+.dropdown-menu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: white;
+    min-width: 200px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    z-index: 100;
+    border-radius: 4px;
+    padding: 8px 0;
+}
+
+.dropdown-menu a {
+    display: block;
+    padding: 8px 16px;
+    color: #333;
+    text-decoration: none;
+    white-space: nowrap;
+}
+
+.dropdown-menu a:hover {
+    background-color: #f5f5f5;
+}
+
+
 .nav-item:not(:last-child)::after {
     content: "";
     position: absolute;
@@ -125,7 +160,26 @@ nav {
     margin-right: 20px;
     font-family: 'Abril Fatface', serif;
 }
+#clock {
+    font-size: 14px;
+    font-weight: bold;
+    margin-top: 5px;
+    color: #333;
+}
 
+/* Hőmérséklet színek */
+.delutan.piros {
+  color: #ff0000 !important;
+  font-weight: bold;
+}
+.delutan.zold {
+  color: #00aa00 !important;
+  font-weight: bold;
+}
+.delutan.kek {
+  color: #0000ff !important;
+  font-weight: bold;
+}
 .idojaras {
     position: relative;
     text-align: right;
@@ -693,3 +747,1135 @@ img {
         color: #7D4627;           /* Kicsit sötétebb meleg barna kurzor fölé húzáskor */
         /* text-decoration: underline; */ /* Ha szeretnéd, bekapcsolhatod – de alapból marad ki */
     }
+.iroink {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.iroink:hover {
+  color: #7D4627;
+}
+    
+    /* Általános stílusok */
+
+
+
+/* Profil rész */
+
+/* Általános stílusok */
+/* Általános stílusok */
+
+
+/* Profil rész */
+.profile {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start; /* Balra igazítás */
+  margin-bottom: 30px;
+}
+
+.profile-image {
+    width: 150px;
+    height: 150px;
+    border: 4px solid #9B5E3A;
+    border-radius: 0px;
+    object-fit: cover;
+    margin-right: 20px;
+    margin-top: 30px;
+}
+
+.profile-info {
+    text-align: left;
+
+}
+
+.profile-info2 {
+  text-align: left;
+  line-height: 1.1;
+  margin-top: 0.2em;
+  margin-bottom: 0.2em;
+}
+
+.profile-info2 p {
+  margin: 0 0 2px 0;
+  font-size: 1em;
+  line-height: 1.1;
+}
+
+.profile-info h3 {
+    margin-top: 0;
+    color: #333;
+}
+
+.profile-info p {
+    margin: 5px 0;
+    color: #555;
+}
+
+.profile-link {
+    display: inline-block;
+    margin-top: 10px;
+    color: #007bff;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+/* Téma tartalom */
+.content {
+    font-size: 16px;
+    color: #333;
+    line-height: 1.8;
+}
+.profile-container {
+  display: flex;
+  align-items: flex-start;
+  gap: 40px; /* Térköz a profil és a szöveg között */
+  margin-bottom: 30px;
+}
+
+.bemutatkozo {
+  max-width: none;
+  flex: 1 1 0;
+}
+/* Emese betűszíne: #006386 */
+.emese-text {
+  color: #006386 !important;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+}
+
+/* Emese */
+.emese-text {
+  color: #006386 !important;
+  -webkit-text-stroke: 1px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Panni */
+.panni-text {
+  color: #006386 !important;
+  -webkit-text-stroke: 1px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Ádi */
+.adi-text {
+  color: #0072D6 !important;
+  -webkit-text-stroke: 1px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Nóra */
+.nora-text, .nora {
+  color: #2F4156 !important;
+  -webkit-text-stroke: 1px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Nati */
+.nati-text {
+  color: #0072D6 !important;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Laura */
+.laura-text {
+  color: #90B8E7 !important;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Juli */
+.juli-text {
+  color: #5D729C !important;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+/* Ákos */
+.akos-text {
+  color: #004066 !important;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  font-weight: 400;
+}
+
+
+.bemutatkozo p {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-size: 1em;
+  line-height: 1.6;
+  color: #222;
+  -webkit-text-stroke: 1.5px #000;
+  text-stroke: 1px #000; /* a legtöbb böngésző csak -webkit-text-stroke-ot támogatja */
+  font-weight: 400;
+}
+.bemutatkozo p.emese-text {
+  color: #006386 !important;
+  -webkit-text-stroke: 1px #000;
+  text-stroke: 1px #000;
+}
+
+/* Frissített dropdown stílusok */
+.dropdown2 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown2-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown2-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown2-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown2-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown2-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown2-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown2-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown2-item[data-category="hitelet"] {
+  background-color: #424485;
+  color: white;
+}
+
+.dropdown2-item[data-category="koreai"] {
+  background-color: #000000;
+  color: white;
+}
+
+
+
+.dropdown2-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown2-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
+
+
+
+.dropdown3 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown3-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown3-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown3-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown3-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown3-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown3-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown3-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown3-item[data-category="divatrovat"] {
+  background-color: #006188;
+  color: white;
+}
+
+.dropdown3-item[data-category="koreai"] {
+  background-color: #000000;
+  color: white;
+}
+
+.dropdown3-item[data-category="kultura"] {
+  background-color: #9B5E3A;
+  color: white;
+}
+
+.dropdown3-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown3-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
+
+
+
+
+.dropdown4 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown4-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown4-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown4-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown4-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown4-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown4-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown4-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown4-item[data-category="iskolankelete"] {
+  background-color: #006188;
+  color: white;
+}
+
+.dropdown4-item[data-category="nemet"] {
+  background: linear-gradient(to bottom, 
+    #000000, 
+    #000000 33%, 
+    #DD0000 33%, 
+    #DD0000 66%, 
+    #FFCE00 66%, 
+    #FFCE00);
+  color: white;
+  padding: 8px 12px; /* adj hozzá paddingot a szöveghez */
+}
+
+.dropdown4-item[data-category="hitelet"] {
+  background-color: #424485;
+  color: white;
+}
+.dropdown4-item[data-category="lictech"] {
+  background-color: #00563F;
+  color: white;
+}
+
+.dropdown4-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown4-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
+
+
+.dropdown5 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown5-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown5-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown5-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown5-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown5-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown5-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown5-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown5-item[data-category="iskolankelete"] {
+  background-color: #006188;
+  color: white;
+}
+
+.dropdown5-item[data-category="nemet"] {
+  background: linear-gradient(to bottom, 
+    #000000, 
+    #000000 33%, 
+    #DD0000 33%, 
+    #DD0000 66%, 
+    #FFCE00 66%, 
+    #FFCE00);
+  color: white;
+  padding: 8px 12px; /* adj hozzá paddingot a szöveghez */
+}
+
+.dropdown5-item[data-category="hitelet"] {
+  background-color: #424485;
+  color: white;
+}
+.dropdown5-item[data-category="lictech"] {
+  background-color: #00563F;
+  color: white;
+}
+
+.dropdown5-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown5-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
+
+
+
+
+.dropdown6 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown6-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown6-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown6-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown6-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown6-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown6-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown6-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown6-item[data-category="iskolankelete"] {
+  background-color: #006188;
+  color: white;
+}
+
+.dropdown6-item[data-category="nemet"] {
+  background: linear-gradient(to bottom, 
+    #000000, 
+    #000000 33%, 
+    #DD0000 33%, 
+    #DD0000 66%, 
+    #FFCE00 66%, 
+    #FFCE00);
+  color: white;
+  padding: 8px 12px; /* adj hozzá paddingot a szöveghez */
+}
+
+.dropdown6-item[data-category="hitelet"] {
+  background-color: #424485;
+  color: white;
+}
+.dropdown6-item[data-category="lictech"] {
+  background-color: #00563F;
+  color: white;
+}
+
+.dropdown6-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown6-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
+
+
+
+.dropdown7 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown7-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown7-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown7-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown7-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown7-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown7-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown7-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown7-item[data-category="iskolankelete"] {
+  background-color: #006188;
+  color: white;
+}
+
+.dropdown7-item[data-category="nemet"] {
+  background: linear-gradient(to bottom, 
+    #000000, 
+    #000000 33%, 
+    #DD0000 33%, 
+    #DD0000 66%, 
+    #FFCE00 66%, 
+    #FFCE00);
+  color: white;
+  padding: 8px 12px; /* adj hozzá paddingot a szöveghez */
+}
+
+.dropdown7-item[data-category="hitelet"] {
+  background-color: #424485;
+  color: white;
+}
+.dropdown7-item[data-category="lictech"] {
+  background-color: #00563F;
+  color: white;
+}
+
+.dropdown7-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown7-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
+
+
+
+.dropdown8 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown8-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown8-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown8-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown8-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown8-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown8-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown8-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown8-item[data-category="iskolankelete"] {
+  background-color: #006188;
+  color: white;
+}
+
+.dropdown8-item[data-category="nemet"] {
+  background: linear-gradient(to bottom, 
+    #000000, 
+    #000000 33%, 
+    #DD0000 33%, 
+    #DD0000 66%, 
+    #FFCE00 66%, 
+    #FFCE00);
+  color: white;
+  padding: 8px 12px; /* adj hozzá paddingot a szöveghez */
+}
+
+.dropdown8-item[data-category="hitelet"] {
+  background-color: #424485;
+  color: white;
+}
+.dropdown8-item[data-category="lictech"] {
+  background-color: #00563F;
+  color: white;
+}
+
+.dropdown8-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown8-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
+
+
+.dropdown9 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown9-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown9-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown9-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown9-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown9-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown9-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown9-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown9-item[data-category="iskolankelete"] {
+  background-color: #006188;
+  color: white;
+}
+
+.dropdown9-item[data-category="nemet"] {
+  background: linear-gradient(to bottom, 
+    #000000, 
+    #000000 33%, 
+    #DD0000 33%, 
+    #DD0000 66%, 
+    #FFCE00 66%, 
+    #FFCE00);
+  color: white;
+  padding: 8px 12px; /* adj hozzá paddingot a szöveghez */
+}
+
+.dropdown9-item[data-category="hitelet"] {
+  background-color: #424485;
+  color: white;
+}
+.dropdown9-item[data-category="lictech"] {
+  background-color: #00563F;
+  color: white;
+}
+
+.dropdown9-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown9-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
+
+
+.dropdown10 {
+  position: relative;
+  display: inline-block;
+  margin-top: 10px;
+  
+}
+
+.dropdown10-toggle {
+  background-color: #9B5E3A; /* Meleg barna szín */
+  color: white;
+  border: none;
+  border-radius: 4px;
+  padding: 8px 15px;
+  cursor: pointer;
+  font-family: 'Abril Fatface', serif;
+  font-size: 1em;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dropdown10-toggle:hover {
+  background-color: #7D4627; /* Sötétebb barna hover állapotban */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.15);
+}
+
+.dropdown10-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: white;
+  border-radius: 4px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  z-index: 1000;
+  min-width: 180px;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+.dropdown10-menu.show {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+.dropdown10-item {
+  padding: 10px 15px;
+  display: block;
+  color: #333;
+  text-decoration: none;
+  transition: all 0.2s ease;
+  border-bottom: 1px solid #f0f0f0;
+    border-radius: 4px;
+    
+
+}
+
+.dropdown10-item:last-child {
+  border-bottom: none;
+}
+
+.dropdown10-item:hover {
+  background-color: #f5f5f5;
+  color: #9B5E3A;
+  padding-left: 20px;
+}
+
+/* Kategóriák színezése */
+.dropdown10-item[data-category="iskolankelete"] {
+  background-color: #006188;
+  color: white;
+}
+
+.dropdown10-item[data-category="nemet"] {
+  background: linear-gradient(to bottom, 
+    #000000, 
+    #000000 33%, 
+    #DD0000 33%, 
+    #DD0000 66%, 
+    #FFCE00 66%, 
+    #FFCE00);
+  color: white;
+  padding: 8px 12px; /* adj hozzá paddingot a szöveghez */
+}
+
+.dropdown10-item[data-category="hitelet"] {
+  background-color: #424485;
+  color: white;
+}
+.dropdown10-item[data-category="lictech"] {
+  background-color: #00563F;
+  color: white;
+}
+
+.dropdown10-item:hover {
+  filter: brightness(1.1);
+}
+
+.dropdown10-item:hover {
+    background-color: #f5f5f5;
+    color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
+}
