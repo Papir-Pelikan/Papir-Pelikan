@@ -1988,3 +1988,51 @@ img {
     background-color: #f5f5f5;
     color: #9B5E3A; /* Meleg barna szín hoverkor (elhagyható) */
 }
+
+    .sarga-hatter {
+      background-color: #FCEAC1;
+      padding: 2px;
+      border-radius: 10px;
+      font-family: Abril Fatface, sans-serif;
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
+
+
+    .onallo-hatter {
+      background-color: #70ABC6;
+      opacity: 0.7;
+      padding: 2px;
+      border-radius: 10px;
+      font-family: Abril Fatface, sans-serif;
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
+
+
+.hr-container {
+  width: 100%;
+  max-width: 1200px; /* Illeszkedjen a többi tartalomhoz */
+  margin: 20px auto; /* Függőleges tér */
+  padding: 0 20px;   /* Ha van padding a .content-en belül */
+  box-sizing: border-box;
+}
+
+.hr-container hr.dotted {
+  border: 0;
+  border-top: 2px dotted #000; /* vagy a kívánt szín */
+  margin: 0;
+  width: 100%;
+}

@@ -58,3 +58,65 @@ main p {
   align-items: center;
   background: #9B5E3A;
 }
+
+.meta-link {
+  font-size: 1.5em;
+  padding: 0 8px;
+  margin-right: 5px;
+  color: white;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  background: #9B5E3A;
+}
+
+
+.meta-link-hitelet {
+  font-size: 1.4em;
+  padding: 0 8px;
+  margin-right: 5px;
+  color: white;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  background: #424485;
+}
+
+.meta-link-hitelet2 {
+  font-size: 0.7em;
+  padding: 0 8px;
+  margin-right: 5px;
+  color: white;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  background: #424485;
+}
+
+.meta-link-onallo {
+  font-size: 1.4em;
+  padding: 0 8px;
+  margin-right: 5px;
+  color: white;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+  background: #9BC2D3;
+}
+
+
+.cimek {
+  font-size: 1.5em;
+  padding: 0 8px;
+  margin-right: 5px;
+  color: #8889B0;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+}
+
