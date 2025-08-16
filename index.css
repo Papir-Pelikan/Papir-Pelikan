@@ -2007,10 +2007,10 @@ img {
 
     .onallo-hatter {
       background-color: #70ABC6;
-      opacity: 0.7;
-      padding: 2px;
-      border-radius: 10px;
+      padding: 1x;
+      border-radius: 1px;
       font-family: Abril Fatface, sans-serif;
+      color: #FFFAEF;
       font-size: 1.1em;
       line-height: 1.6;
       max-width: max;
@@ -2021,6 +2021,21 @@ img {
 
     }
 
+
+        .onallo-hatter2 {
+      background-color: #70ABC6;
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #FFFAEF;
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: center;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
 
 .hr-container {
   width: 100%;
@@ -2035,4 +2050,48 @@ img {
   border-top: 2px dotted #000; /* vagy a kívánt szín */
   margin: 0;
   width: 100%;
+}
+
+
+/* Tooltip stílus */
+.tooltip {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.tooltip .tooltip-text {
+  visibility: hidden;
+  width: 180px;
+  background-color: #333;
+  color: #fff;
+  text-align: center;
+  border-radius: 6px;
+  padding: 18px;
+  position: absolute;
+  z-index: 100;
+  bottom: 125%; /* Felül jelenik meg */
+  left: 50%;
+  margin-left: -90px;
+  opacity: 0;
+  transition: opacity 0.3s;
+  font-size: 14px;
+  font-weight: normal;
+  white-space: nowrap;
+}
+
+.tooltip .tooltip-text::after {
+  content: "";
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  margin-left: -5px;
+  border-width: 5px;
+  border-style: solid;
+  border-color: #333 transparent transparent transparent;
+}
+
+.tooltip:hover .tooltip-text {
+  visibility: visible;
+  opacity: 1;
 }

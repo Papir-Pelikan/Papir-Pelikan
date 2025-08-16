@@ -97,7 +97,7 @@ main p {
 }
 
 .meta-link-onallo {
-  font-size: 1.4em;
+  font-size: 1.0em;
   padding: 0 8px;
   margin-right: 5px;
   color: white;
@@ -105,8 +105,8 @@ main p {
   height: 2.2em;
   display: flex;
   align-items: center;
-  background: #9BC2D3;
 }
+
 
 
 .cimek {
@@ -120,3 +120,15 @@ main p {
   align-items: center;
 }
 
+.cimek-2 {
+  font-size: 1.0em;
+  padding: 0 8px;
+  margin-right: 5px;
+  color: #8889B0;
+  font-family: 'Helvetica', serif;
+
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+}
