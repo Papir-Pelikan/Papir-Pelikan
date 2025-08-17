@@ -26,10 +26,25 @@ header {
 .author-name {
   color: #e74c3c; /* Vagy más piros árnyalat */
   font-family: 'Helvetica', serif;
+    text-decoration: none;
   font-weight: 700;
   letter-spacing: 0px;
   padding-top: -80px;
 }
+
+.author-name2 {
+  color: #e74c3c; /* Vagy más piros árnyalat */
+  font-family: 'Helvetica', serif;
+  font-weight: 700;
+  text-decoration: none;
+  letter-spacing: 0px;
+  padding-bottom: -80px;
+  margin-top: 0.2em;
+    margin-bottom: 0.2em;
+    font-size: 1.2em;
+}
+
+
 nav {
     background-color: #2c4049;
     color: white;
@@ -731,7 +746,7 @@ img {
   color: #444;
   margin: 16px 0;
   max-width: 800px;
-  line-height: 1.5;
+  line-height: 1.5; 
 }
 
 .featured-content .article-meta {
@@ -785,6 +800,19 @@ img {
 
     .onallo-link:hover {
         color: #000;           /* Sötétebb meleg barna hoverkor */
+    }
+
+      .onallo-link2 {
+        color: #9BC2D3;           /* Meleg, gesztenyebarna – nincs kékes árnyalat */
+        text-decoration: none;    /* Nincs aláhúzás */
+          font-size: 1.3em;
+
+        transition: color 0.2s ease;
+        display: block;           /* FONTOS: az egész blokk legyen kattintható */
+    }
+
+    .onallo-link2:hover {
+        color: #006188;           /* Sötétebb meleg barna hoverkor */
     }
 
       .rangers-link {
@@ -2036,6 +2064,276 @@ img {
 
 
     }
+
+    
+        .fejlec-megjegyzes {
+      background-color: #70ABC6;
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #FFFAEF;
+      font-size: 1.9m;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: center;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
+.fejlec-megjegyzes-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  background: #70ABC6;
+}
+
+.fejlec-megjegyzes-wrapper.open {
+  max-height: 100px; /* Elég nagy érték, hogy biztosan látszódjon */
+}
+
+.fejlec-megjegyzes {
+  padding: 10px;
+  text-align: center;
+}
+
+
+
+
+.fejlec-megjegyzes-hitelet {
+      background-color: #8889b0;
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #FFFAEF;
+      font-size: 1.9m;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: center;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
+.fejlec-megjegyzes-hitelet-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  background: #8889b0;
+}
+
+.fejlec-megjegyzes-hitelet-wrapper.open {
+  max-height: 100px; /* Elég nagy érték, hogy biztosan látszódjon */
+}
+
+.fejlec-megjegyzes-hitelet {
+  padding: 10px;
+  text-align: center;
+}
+
+        .fejlec-megjegyzes-rangers {
+      background-color: #144dd6;
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #FFFAEF;
+      font-size: 1.9m;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: center;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
+.fejlec-megjegyzes-rangers-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  background: #085bff;
+}
+
+.fejlec-megjegyzes-rangers-wrapper.open {
+  max-height: 100px; /* Elég nagy érték, hogy biztosan látszódjon */
+}
+
+.fejlec-megjegyzes-rangers {
+  padding: 10px;
+  text-align: center;
+}
+
+
+.fejlec-megjegyzes-deutschblick {
+      background-color: #085bff;
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #FFFAEF;
+      font-size: 1.9m;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: center;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
+.fejlec-megjegyzes-deutschblick-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  background: #085bff;
+}
+
+.fejlec-megjegyzes-deutschblick-wrapper.open {
+  max-height: 100px; /* Elég nagy érték, hogy biztosan látszódjon */
+}
+
+.fejlec-megjegyzes-deutschblick {
+  padding: 10px;
+  text-align: center;
+
+
+.rovat-cimek {
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #70ABC6;
+      font-size: 1.9m;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+    }
+    .rovat-cimek h2 {
+    margin-bottom: 0.2em;
+}
+    .rovat-cimek h4 {
+      font-family: Abril Fatface, sans-serif;
+      color: #70ABC6;
+      font-size: 1.5em;
+      line-height: 1.6;
+      max-width: max;
+       margin-top: 0.2em;   /* vagy 0, ha teljesen fel akarod tolni */
+    margin-bottom: 0.2em;
+      text-align: left;
+    }
+}
+.rovat-alcim {
+  border-radius: 1px;
+  font-family: Abril Fatface, sans-serif;
+  color: #000;
+  font-size: 1.3em;
+  line-height: 1.6;
+  max-width: max;
+  margin: 4px 0 4px 0; /* Kisebb margó! */
+  text-align: left;
+}
+
+.rovat-cimek-hitelet {
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #8889b0;
+      font-size: 1.9m;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+    }
+    .rovat-cimek-hitelet h2 {
+    margin-bottom: 0.2em;
+}
+    .rovat-cimek-hitelet h4 {
+      font-family: Abril Fatface, sans-serif;
+      color: #424485;
+      font-size: 1.5em;
+      line-height: 1.6;
+      max-width: max;
+       margin-top: 0.2em;   /* vagy 0, ha teljesen fel akarod tolni */
+    margin-bottom: 0.2em;
+      text-align: left;
+    }
+}
+.rovat-alcim-hitelet {
+  border-radius: 1px;
+  font-family: Abril Fatface, sans-serif;
+  color: #000;
+  font-size: 1.3em;
+  line-height: 1.6;
+  max-width: max;
+  margin: 4px 0 4px 0; /* Kisebb margó! */
+  text-align: left;
+}
+
+.rovat-cimek-rangers {
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #144dd6;
+      font-size: 1.9m;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+    }
+    .rovat-cimek-rangers h2 {
+    margin-bottom: 0.2em;
+}
+    .rovat-cimek-rangers h4 {
+      font-family: Abril Fatface, sans-serif;
+      color: #424485;
+      font-size: 1.5em;
+      line-height: 1.6;
+      max-width: max;
+       margin-top: 0.2em;   /* vagy 0, ha teljesen fel akarod tolni */
+    margin-bottom: 0.2em;
+      text-align: left;
+    }
+}
+.rovat-alcim-rangers {
+  border-radius: 1px;
+  font-family: Abril Fatface, sans-serif;
+  color: #000;
+  font-size: 1.3em;
+  line-height: 1.6;
+  max-width: max;
+  margin: 4px 0 4px 0; /* Kisebb margó! */
+  text-align: left;
+}
+
+.rovat-cimek-deutschblick {
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #085bff;
+      font-size: 1.9m;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+    }
+    .rovat-cimek-deutschblick h2 {
+    margin-bottom: 0.2em;
+}
+    .rovat-cimek-deutschblick h4 {
+      font-family: Abril Fatface, sans-serif;
+      color: #085bff;
+      font-size: 1.5em;
+      line-height: 1.6;
+      max-width: max;
+       margin-top: 0.2em;   /* vagy 0, ha teljesen fel akarod tolni */
+    margin-bottom: 0.2em;
+      text-align: left;
+    }
+}
+.rovat-alcim-deutschblick {
+  border-radius: 1px;
+  font-family: Abril Fatface, sans-serif;
+  color: #000;
+  font-size: 1.3em;
+  line-height: 1.6;
+  max-width: max;
+  margin: 4px 0 4px 0; /* Kisebb margó! */
+  text-align: left;
+}
+
 
 .hr-container {
   width: 100%;

@@ -2,14 +2,13 @@
 <html lang="hu">
 <head>
 <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Papír-Pelikán</title>
-    <link rel="icon" type="image/x-icon" href="papirpelikan_hatternelkul.png">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Inter&display=swap" rel="stylesheet">
-  <link href="index.css" rel="stylesheet">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papír-Pelikán</title>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="article1.css">
+<link rel="stylesheet" href="index.css">
 
-</head> 
+</head>
 <body>
 
 <header>
@@ -19,7 +18,7 @@
     <div id="clock"></div>
 </div>
     
-    <div class="site-logo">
+<div class="site-logo">
 <a href="index.html">
     <img src="papirpelikanlogo.svg" alt="Papír-Pelikán logó">
 </a>    </div>
@@ -58,11 +57,10 @@
         </svg>
         <input type="text" placeholder="Keresés..." class="search-bar">
       </div>
-    </div>
+    </div>  
   </div>
   
   <!-- Jobb oldali menüpontok -->
-<!-- Modify your nav-right section -->
 <div class="nav-right">
     <div class="nav-item dropdown">
         <a href="bemutatkozunk.html#szerkesztoseg" class="iroink">Íróink</a>
@@ -81,13 +79,16 @@
     <div class="nav-item dropdown">
         <a href="lapszamaink.html" class="iroink">Lapszámaink</a>
         <div class="dropdown-menu">
-            <a href="lapszamaink.html?szam=0">0. szám</a>
+            <a href="lapszamaink.html?szam=1">I. szám</a>
+            <a href="lapszamaink.html?szam=2">II. szám</a>
+            <a href="lapszamaink.html?szam=3">III. szám</a>
+            <a href="lapszamaink.html?szam=4">IV. szám</a>
         </div>
     </div>     
     <div class="nav-item dropdown">
         <a href="rovataink.html" class="iroink">Rovataink</a>
         <div class="dropdown-menu">
-            <a href="hiteleti-cikkeink.html">Hitélet</a>
+            <a href="rovataink.html#hitelet">Hitélet</a>
             <a href="rovataink.html#tudomany">Tudomány</a>
             <a href="rovataink.html#kultura">Kultúra</a>
             <a href="rovataink.html#tarsadalom">Társadalom</a>
@@ -96,166 +97,54 @@
     </div>
 </div>
 </nav>
-  <div class="title-bar">
-    <div class="napi-ige">
-      <p id="napi-ige-szoveg">„Ne félj és ne aggódj tehát, mert az Úr a te Istened veled lesz mindenütt, ahova csak mész.” - Józs 1:9</p>
-    </div>
-  </div>
-</div>
 
-<div class="content">
-
-
-  <a href="templom-nem-unalmas.html" class="hiteleti-link">
-    <div class="article side-article">
-        <h3>A templom nem unalmas!</h3>
-        <p>Hogyan tedd élvezetessé a templomban töltött időt?</p>
-    </a>
+<main style="max-width: 1000px; margin: auto; padding: 20px;">
     
-    <div class="kategoria-logo">
-      <a href="hiteleti-cikkeink.html">
-  <img src="hitelet.svg" alt="Hitélet rovat">
+<div style="display: flex; background: #424485  ; color: white; padding: 15px; font-weight: bold; justify-content: center; align-items: center;">
+  <a href="hiteleti-cikkeink.html" style="padding: 0 8px; display: flex; align-items: center;">
+    <img src="hitelet.svg" alt="Hitélet" style="height: 2.2em; vertical-align: middle;">
   </a>
+  <div class="info-icon" style="margin-left: 10px; cursor: pointer;">
+    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
+      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
+    </svg>  
+  </div>
 </div>
-<a href="decsi-boroka.html" class="author-name">
+<div class="fejlec-megjegyzes-hitelet-wrapper">
+  <div class="fejlec-megjegyzes-hitelet">
+    Keresztyény híreink, érdekességeink.
+  </div>
+</div>
+
+
+    <a href="templom-nem-unalmas.html" class="onallo-link2">
+<div class="rovat-cimek-hitelet">
+    <h2>A templom nem unalmas!</h2>
+
+</div>
+<div class="rovat-alcim-hitelet">
+    <h4>egy rövid bemutatás, 2 mondat max</h4>
+</div>
+<a href="decsi-boroka.html" class="author-name2">
         Decsi Boróka
-    </a>       
-  </div>
-  
+    </a>
+    <br>
+    <br>
+    <a href="szekrenyes-laura.html" class="author-name2">
+        Szekrényes Laura
+    </a>
 
-    <a href="3-tipp-tanevkezdeshez.html" class="onallo-link">
+    </a>
 
-      <!-- Középső cikk (fő cikk) -->
-      <div class="article main-article">
-        <h3>3 tipp tanévkezdéshez</h3>
-        <p>Mi szükséges ahhoz, hogy 100%-osan induljon az új év</p>
-
-      </a>
-        <div class="kategoria-logo">
-          <a href="onallo-cikkeink.html">
-  <img src="onallo.svg" alt="Önálló rovat">
-</a>
-</div>
-
-<a href="toth-emese.html" class="author-name">
-        Tóth Emese
-    </a>  
-      </div>
-
-
-
-      <div class="article side-article">
-            <a href="legyel-te-is-royal-ranger.html" class="rangers-link">
-
-        <h3>Legyél te is Royal Ranger! </h3>
-        <p>Miért csatlakozz egy értékes közösséghez?</p>
-        </a>
-        <div class="kategoria-logo">
-                <a href="rangers-cikkeink.html">
-
-  <img src="rangers.svg" alt="Ranger rovat">
-</a>
-</div>
-<a href="monok-julianna.html" class="author-name">
-        Monok Julianna
-    </a>  
-      </div>
-<div class="article side-article">
-        <a href="ich-mochte-mich-vorstellen.html" class="deutschblick-link">
-
-        <h3>Ich möchte mich vorstellen</h3>
-        <p>Német rovat bemutatása, mire lehet számítani</p>
-      </a>
-        <div class="kategoria-logo">
-                <a href="deutschblick-cikkeink.html">
-
-  <img src="deutschblick.svg" alt="Deutschblick rovat">
-</a>
-</div>
-<a href="czegledi-adam.html" class="author-name">
-        Czeglédi Ádám
-    </a>  
-      </div>
-      
-</div>
-<div class="hr-container">
+    <div class="hr-container">
   <hr class="dotted">
 </div>
 
-<a href="bemutatkozunk.html" class="brown-link">
-  <div class="featured-main-article">
-    <img src="hatter1.jpg" alt="Főcikk kép">
-    <div class="featured-content">
-      <h1>Bemutatkozik a Papír-Pelikán</h1>
-      <p class="lead">A főszerkesztő köszöntése, néhány szó rólunk.</p>
-    </div>
-  </div>
-</a>
-<div class="hr-container">
-  <hr class="dotted">
-</div>
-<div class="content">
-    <div class="article side-article">
-                  <a href="leiner-laura-babel.html" class="konyvajanlok-link">
 
-        <h3>Leiner Laura: Bábel könyavjánló</h3>
-        <p>Nati leírása a szerzőről, a könyv tartalmáról</p>
-        </a>
-        <div class="kategoria-logo">
-                          <a href="konyvajanlo-cikkeink.html">
-  <img src="konyvajanloink.svg" alt="Könyvajánló rovat">
-</a>
-</div>
-<a href="keki-natalia.html" class="author-name">
-        Kéki Natália
-    </a>  
-      </div>
 
-      <!-- Középső cikk (fő cikk) -->
-      <div class="article main-article">
-                          <a href="udvozollek-divatrovatunkban.html" class="divatrovat-link">
+    </main>
 
-        <h3>Üdvözöllek Divatrovatunkban</h3>
-        <p></p>
-        </a>
-        <div class="kategoria-logo">
-          <a href="divatrovat-cikkeink.html">
-
-  <img src="divat.svg" alt="Divat rovat">
-</a>
-</div>
-<a href="banoczi-anna.html" class="author-name">
-        Bánóczi Anna
-    </a>  
-
-      </div>
-
-      <div class="article side-article">
-                          <a href="fontosabb-datumok-az-ev-folyaman.html" class="iskolank-elete-link">
-
-        <h3>Fontosabb dátumok az év folyamán</h3>
-        <p>Fontosabb programjaink az ősz folyamán</p>
-        </a>
-        <div class="kategoria-logo">
-          <a href="iskolank-elete-cikkeink.html">
-
-  <img src="iskolankelete.svg" alt="Iskolánk élete rovat">
-</a>
-</div>
-<a href="czegledi-adam.html" class="author-name">
-        Czeglédi Ádám
-    </a>  
-      </div>
-
-      
-
-</div>
-
-<div class="pelican-img">
-  <img src="https://upload.wikimedia.org/wikipedia/commons/2/2c/Pelican_icon.svg" alt="Pelikán">
-</div>
-
-</body>
+<script src="index.js"></script>
 <script>
   // Magyar napok nevei
   const napok = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];
@@ -717,6 +606,7 @@ const napiIgék = [
     { szoveg: "„Az én segítségem az Úrtól van, aki teremtette az eget és a földet.”", hely: "Zsolt 121:2" },
     { szoveg: "„Az Úr irgalmassága örökkévaló, az ő hűsége mindörökké megmarad.”", hely: "Zsolt 100:5" }
 ];
+
   function valasztNapiIget() {
     const today = new Date();
     const napIndex = today.getDate() % napiIgék.length;
@@ -760,6 +650,19 @@ function frissitIdojaras() {
 
       // Hőmérséklet
       const homerseklet = Math.round(data.main.temp);
+
+      // Szín beállítása a hőmérséklet alapján
+      const homersekletElem = document.querySelector(".delutan");
+      homersekletElem.textContent = homerseklet + "°C";
+      
+      // Szín beállítása
+      if (homerseklet > 30) {
+        homersekletElem.className = "delutan piros";
+      } else if (homerseklet >= 20) {
+        homersekletElem.className = "delutan zold";
+      } else {
+        homersekletElem.className = "delutan kek";
+      }
 
       // Kiírás a HTML-be
       document.querySelector(".napkelte").textContent = napkelte;
@@ -818,6 +721,6 @@ if (adat) {
   document.querySelector(".megjegyzes").textContent = adat.megjegyzes;
 }
 </script>
-<script src="index.js"></script>
-<script src="weather-api.js"></script>
+</body>
+
 </html>
