@@ -594,3 +594,59 @@ document.addEventListener('DOMContentLoaded', function() {
     lastScrollPosition = currentScrollPosition;
   });
 });
+
+document.addEventListener('DOMContentLoaded', function() {
+  const infoIcon = document.querySelector('.info-icon');
+  const explanationWrapper = document.querySelector('.fejlec-megjegyzes-iskolankelete-wrapper');
+  let isExplanationOpen = false;
+
+  // Kattintásra nyit/zár
+  if (infoIcon && explanationWrapper) {
+    infoIcon.addEventListener('click', function() {
+      isExplanationOpen = !isExplanationOpen;
+      explanationWrapper.classList.toggle('open', isExplanationOpen);
+    });
+  }
+
+  // Görgetéskor eltűnik
+  let lastScrollPosition = 0;
+  window.addEventListener('scroll', function() {
+    const currentScrollPosition = window.scrollY;
+    
+    // Ha lefelé görgetünk és a magyarázat nyitva van
+    if (currentScrollPosition > lastScrollPosition && isExplanationOpen) {
+      explanationWrapper.classList.remove('open');
+      isExplanationOpen = false;
+    }
+    
+    lastScrollPosition = currentScrollPosition;
+  });
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+  const infoIcon = document.querySelector('.info-icon');
+  const explanationWrapper = document.querySelector('.fejlec-megjegyzes-konyvajanloink-wrapper');
+  let isExplanationOpen = false;
+
+  // Kattintásra nyit/zár
+  if (infoIcon && explanationWrapper) {
+    infoIcon.addEventListener('click', function() {
+      isExplanationOpen = !isExplanationOpen;
+      explanationWrapper.classList.toggle('open', isExplanationOpen);
+    });
+  }
+
+  // Görgetéskor eltűnik
+  let lastScrollPosition = 0;
+  window.addEventListener('scroll', function() {
+    const currentScrollPosition = window.scrollY;
+    
+    // Ha lefelé görgetünk és a magyarázat nyitva van
+    if (currentScrollPosition > lastScrollPosition && isExplanationOpen) {
+      explanationWrapper.classList.remove('open');
+      isExplanationOpen = false;
+    }
+    
+    lastScrollPosition = currentScrollPosition;
+  });
+});

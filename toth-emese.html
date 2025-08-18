@@ -3,167 +3,185 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Papír-Pelikán</title>
+<title>Tóth Emese | Papír-Pelikán</title>    
+<link rel="icon" type="image/x-icon" href="papirpelikan_hatternelkul.png">
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="article1.css">
 <link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="irok.css">
+<style>
+    /* Profil-specifikus stílusok */
 
+</style>
 </head>
 <body>
 
 <header>
     <div id="datum-napnev">
-    <div id="datum"></div>
-    <div id="nevnap"></div>
-    <div id="clock"></div>
-</div>
+        <div id="datum"></div>
+        <div id="nevnap"></div>
+        <div id="clock"></div>
+    </div>
     
-<div class="site-logo">
-<a href="index.html">
-    <img src="papirpelikanlogo.svg" alt="Papír-Pelikán logó">
-</a>    </div>
+    <div class="site-logo">
+        <a href="index.html">
+            <img src="papirpelikanlogo.svg" alt="Papír-Pelikán logó">
+        </a>
+    </div>
     
     <div class="idojaras">
-    <div class="main-weather" id="weather-toggle">
-        <div class="temp-display">
-            <img src="thermometer.svg" alt="Hőmérséklet">
-            <span class="delutan">30°C</span>
+        <div class="main-weather" id="weather-toggle">
+            <div class="temp-display">
+                <img src="thermometer.svg" alt="Hőmérséklet">
+                <span class="delutan">30°C</span>
+            </div>
+            <span class="toggle-icon">▼</span>
         </div>
-        <span class="toggle-icon">▼</span>
+        
+        <div class="weather-details">
+            <div class="sunrise-info">
+                <img src="napkelte.png" alt="Napkelte">
+                <span class="napkelte">5:10</span>
+            </div>
+            <div class="sunset-info">
+                <img src="napnyugta.svg" alt="Napnyugta">
+                <span class="napnyugta">21:00</span>
+            </div>
+        </div>
     </div>
-    
-    <!-- Lenyíló rész (alapból rejtve) -->
-    <div class="weather-details">
-        <div class="sunrise-info">
-            <img src="napkelte.png" alt="Napkelte">
-            <span class="napkelte">5:10</span>
-        </div>
-        <div class="sunset-info">
-            <img src="napnyugta.svg" alt="Napnyugta">
-            <span class="napnyugta">21:00</span>
-        </div>
-    </div>
-</div>
 </header>
 
 <div class="nav-container">
-<nav>
-  <!-- Bal oldali elemek (keresés + szűrés) -->
-  <div class="nav-left">
-    <div class="nav-item search-container">
-      <div class="search-wrapper">
-        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18">
-          <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
-        </svg>
-        <input type="text" placeholder="Keresés..." class="search-bar">
-      </div>
-    </div>  
-  </div>
-  
-  <!-- Jobb oldali menüpontok -->
-<div class="nav-right">
-    <div class="nav-item dropdown">
-        <a href="bemutatkozunk.html#szerkesztoseg" class="iroink">Íróink</a>
-        <div class="dropdown-menu">
-            <a href="bemutatkozunk.html#emese">Tóth Emese</a>
-            <a href="bemutatkozunk.html#panni">Bánóczi Anna</a>
-            <a href="bemutatkozunk.html#adi">Czeglédi Ádám</a>
-            <a href="bemutatkozunk.html#nati">Kéki Natália</a>
-            <a href="bemutatkozunk.html#akos">Milyán Ákos</a>
-            <a href="bemutatkozunk.html#eszter">Milyán Eszter</a>
-            <a href="bemutatkozunk.html#juli">Monok Julianna</a>
-            <a href="bemutatkozunk.html#laura">Szekrényes Laura</a>
-            <a href="bemutatkozunk.html#nora">Szekrényes Nóra</a>
+    <nav>
+        <div class="nav-left">
+            <div class="nav-item search-container">
+                <div class="search-wrapper">
+                    <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18">
+                        <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+                    </svg>
+                    <input type="text" placeholder="Keresés..." class="search-bar">
+                </div>
+            </div>  
         </div>
-    </div> 
-    <div class="nav-item dropdown">
-        <a href="lapszamaink.html" class="iroink">Lapszámaink</a>
-        <div class="dropdown-menu">
-            <a href="lapszamaink.html?szam=1">I. szám</a>
-            <a href="lapszamaink.html?szam=2">II. szám</a>
-            <a href="lapszamaink.html?szam=3">III. szám</a>
-            <a href="lapszamaink.html?szam=4">IV. szám</a>
-        </div>
-    </div>     
-    <div class="nav-item dropdown">
-        <a href="rovataink.html" class="iroink">Rovataink</a>
-        <div class="dropdown-menu">
-            <a href="rovataink.html#hitelet">Hitélet</a>
-            <a href="rovataink.html#tudomany">Tudomány</a>
-            <a href="rovataink.html#kultura">Kultúra</a>
-            <a href="rovataink.html#tarsadalom">Társadalom</a>
-            <a href="rovataink.html#muveszet">Művészet</a>
-        </div>
-    </div>
+        
+        <div class="nav-right">
             <div class="nav-item dropdown">
-        <a href="lapszamaink.html" class="iroink">Elérhetőségeink</a>
-        <div class="dropdown-menu">
-            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGLQBqkQGWBNznwnbflkmbDGKknNmnqKVcWLJKCrjCRTWRGGzBBqqGDLSzbdGMfPCBbxsvf" target="_blank">G-mail</a>
-            <a href="https://www.instagram.com/papir.pelikan/" target="_blank"">Instagram</a>
-            <a href="https://www.facebook.com/profile.php?id=61579389116350" target="_blank"">Facebook</a>
-            <a href="https://www.grl.hu" target="_blank">grl.hu</a>        </div>
-    </div> 
+                <a href="bemutatkozunk.html#szerkesztoseg" class="iroink">Íróink</a>
+                <div class="dropdown-menu">
+                    <a href="bemutatkozunk.html#emese">Tóth Emese</a>
+                    <a href="bemutatkozunk.html#panni">Bánóczi Anna</a>
+                    <a href="bemutatkozunk.html#adi">Czeglédi Ádám</a>
+                    <a href="bemutatkozunk.html#nati">Kéki Natália</a>
+                    <a href="bemutatkozunk.html#akos">Milyán Ákos</a>
+                    <a href="bemutatkozunk.html#eszter">Milyán Eszter</a>
+                    <a href="monok-julianna.html" class="active">Monok Julianna</a>
+                    <a href="bemutatkozunk.html#laura">Szekrényes Laura</a>
+                    <a href="bemutatkozunk.html#nora">Szekrényes Nóra</a>
+                </div>
+            </div> 
+            <div class="nav-item dropdown">
+                <a href="lapszamaink.html" class="iroink">Lapszámaink</a>
+                <div class="dropdown-menu">
+                    <a href="lapszamaink.html?szam=1">I. szám</a>
+                    <a href="lapszamaink.html?szam=2">II. szám</a>
+                    <a href="lapszamaink.html?szam=3">III. szám</a>
+                    <a href="lapszamaink.html?szam=4">IV. szám</a>
+                </div>
+            </div>     
+            <div class="nav-item dropdown">
+                <a href="rovataink.html" class="iroink">Rovataink</a>
+                <div class="dropdown-menu">
+                    <a href="rovataink.html#hitelet">Hitélet</a>
+                    <a href="rovataink.html#tudomany">Tudomány</a>
+                    <a href="rovataink.html#kultura">Kultúra</a>
+                    <a href="rovataink.html#tarsadalom">Társadalom</a>
+                    <a href="rovataink.html#muveszet">Művészet</a>
+                </div>
+            </div>
+            <div class="nav-item dropdown">
+                <a href="lapszamaink.html" class="iroink">Elérhetőségeink</a>
+                <div class="dropdown-menu">
+                    <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGLQBqkQGWBNznwnbflkmbDGKknNmnqKVcWLJKCrjCRTWRGGzBBqqGDLSzbdGMfPCBbxsvf" target="_blank">G-mail</a>
+                    <a href="https://www.instagram.com/papir.pelikan/" target="_blank">Instagram</a>
+                    <a href="https://www.facebook.com/profile.php?id=61579389116350" target="_blank">Facebook</a>
+                    <a href="https://www.grl.hu" target="_blank">grl.hu</a>
+                </div>
+            </div> 
+        </div>
+    </nav>
 </div>
-</nav>
 
-<main style="max-width: 1000px; margin: auto; padding: 20px;">
+<main class="profile-container">
+    <div class="profile-header">
+        <img src="emese-profil.jpg" alt="Tóth Emese" class="profile-image">
+        <div class="profile-info">
+            <h1 class="profile-name">Tóth Emese</h1>
+            <div class="profile-title">Főszerkesztő, újságíró</div>
+            <div class="profile-bio">
+                Mesinek hívnak és a 12.C-be járok. Elsődleges posztom  az írókör vezető szerepe, másodlagosan pedig a főszerkesztőség a Papír-Pelikánban és mindkettőnek alapító tagja vagyok. Az újságba mindenféle rovatba be fogok szállni egy-két cikkel, mert rengeteg minden van, ami érdekel és én azt vallom magamról, hogy sok minden van, amiben jó is vagyok. Hobbim rengeteg van, mint például az olvasás, az írás, a rajzolás és a festés, az ékszerkészítés, a futás, a főzés és a sütés is. Nagy kpop rajongó vagyok, nagyon szívesen nézek bármilyen kdramát, animét vagy filmet. Ebben a témában saját rovatom is lesz, de ahogy fentebb is írtam több különböző rovatba is beszállok majd egy-egy cikkel. Emellett novelláim is lesznek az újságban, de azokat elsősorban az írókörösök blogjára fogjuk feltölteni.
+            </div>
+            <div class="profile-social">
+                <a href="mailto:julianna@papirpelikan.hu" target="_blank">Email</a>
+                <a href="https://www.facebook.com" target="_blank">Facebook</a>
+                <a href="https://www.instagram.com" target="_blank">Instagram</a>
+            </div>
+
+            
+        </div>
+        <div class="hr-container">
+  <hr class="dotted">
+</div>
+
+
+            <div class="articles-section">
+        <h2 class="section-title">Cikkeim</h2>
+    <a href="legyel-te-is-royal-ranger.html" class="onallo-link2">
+<div class="rovat-cimek-iskolankelete">
+    <h3>3 tipp tanévkezdéshez</h3>
+
+</div>
+<div class="rovat-alcim-rangers">
+    <h5>egy rövid bemutatás, 2 mondat max</h5>
+</div>
+
+                <a href="onallo-cikkeink.html" class="rangers-link">                
+
+                    <img src="onallo.svg" alt="Önálló cikkeink">
+            </a>
+
+    </a>
     
-<div style="display: flex; background: #9BC2D3; color: white; padding: 15px; font-weight: bold; justify-content: center; align-items: center;">
-  <a href="onallo-cikkeink.html" style="padding: 0 8px; display: flex; align-items: center;">
-    <img src="onallo.svg" alt="Hitélet" style="height: 2.2em; vertical-align: middle;">
-  </a>
-  <div class="info-icon" style="margin-left: 10px; cursor: pointer;">
-    <svg width="20" height="20" viewBox="0 0 24 24" fill="white">
-      <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm1 15h-2v-6h2v6zm0-8h-2V7h2v2z"/>
-    </svg>
-  </div>
-</div>
-<div class="fejlec-megjegyzes-wrapper">
-  <div class="fejlec-megjegyzes">
-    Az itt található cikkeink nem tartoznak konkrét kategóriákba, ezért külön gyűjtöttük olvasóink számára "önálló cikkeink" néven.
-  </div>
-</div>
-
-
-    <a href="3-tipp-tanevkezdeshez.html" class="onallo-link2">
-<div class="rovat-cimek">
-    <h2>3 tipp tanévkezdéshez</h2>
-
-
-</div>
-<div class="rovat-alcim">
-    <h4>egy rövid bemutatás, 2 mondat max</h4>
-</div>
-    <a href="toth-emese.html" class="author-name2">
-        Tóth Emese
-    </a>
-
-
-    </a>
-
+    </div>
     <div class="hr-container">
   <hr class="dotted">
-</div>
+</div>  
+    </div>
+    
+    <div class="articles-section">
+        <h2 class="section-title">Hirdetéseink</h2>
+        <div class="article-list">
+            <div class="article-card">
+        <a href="legyel-te-is-royal-ranger.html" class="rangers-link">                
+                <div class="article-content2    ">
+                    <h3 class="article-title">Legyél te is Royal Ranger!</h3>
+                    <p class="article-excerpt">Bemutatjuk a Royal Rangers mozgalmat és annak gödöllői csapatát, ahol a gyerekek fejlődhetnek és közösségben nőhetnek.</p>
+                </a>     
+                <a href="rangers-cikkeink.html" class="rangers-link">                
 
-        <a href="ami-a-nyarra-emlekeztet.html" class="onallo-link2">
+                    <img src="rangers2.svg" alt="Royal Rangers">
+            </a>
+            </div>
+            
+                </div>
+            
 
-<div class="rovat-cimek">
-    <h2>Ami a nyárra emlékeztet</h2>
-</div>
-<div class="rovat-alcim">
-    egy rövid bemutatás, 2 mondat max
-</div>
-    </a>
-    <a href="toth-emese.html" class="author-name2">
-        Tóth Emese
-    </a>
-
-<div class="hr-container">
+        </div>
+        <div class="hr-container">
   <hr class="dotted">
 </div>
-
-
-    </main>
+    </div>
+    
+</main>
 
 <script src="index.js"></script>
 <script>
@@ -743,5 +761,4 @@ if (adat) {
 }
 </script>
 </body>
-
 </html>
