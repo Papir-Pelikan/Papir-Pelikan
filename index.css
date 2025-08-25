@@ -610,6 +610,7 @@ nav {
   background: #2c4049;
   padding: 8px 0;      /* kisebb padding, alacsonyabb sáv */
   width: 100%;
+  height: 190%;
   box-sizing: border-box;
 }
 
@@ -623,8 +624,13 @@ nav {
 .rovatok-bar-inner a img {
   height: 7em;      /* nagyobb ikon */
   max-height: 660px;
+      transition: transform 0.3s ease;
 }
 
+
+.rovatok-bar-inner a:hover img {
+    transform: scale(2.1); /* Egérrel érintve nagyítás */
+}
 @keyframes rovat-scroll {
   0% {
     transform: translateX(0);
@@ -2113,6 +2119,20 @@ img {
 
     }
 
+            .deutschblick-hatter {
+      background-color: #085bff;
+      border-radius: 1px;
+      font-family: Abril Fatface, sans-serif;
+      color: #FFFAEF;
+      font-size: 1.1em;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: center;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
     
         .fejlec-megjegyzes {
       background-color: #70ABC6;
