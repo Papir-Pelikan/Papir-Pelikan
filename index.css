@@ -591,6 +591,54 @@ nav {
   display: block;
   margin: 0 auto 4px auto;
 }
+/* index.css vagy article1.css */
+.rovatok-bar {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row-reverse; /* jobbról balra töltődik fel */
+  background: #2c4049;
+  color: white;
+  padding: 15px;
+  font-weight: bold;
+  justify-content: flex-start; /* balra igazítva, de jobbról indul */
+  align-items: center;
+  gap: 10px;
+  margin: 0;
+}
+.rovatok-bar-scroll {
+  overflow: hidden;
+  background: #2c4049;
+  padding: 8px 0;      /* kisebb padding, alacsonyabb sáv */
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.rovatok-bar-inner {
+  display: flex;
+  gap:  10px;           /* nagyobb tér az ikonok között, de nem túl nagy */
+  align-items: center;
+  animation: rovat-scroll 40s linear infinite;
+}
+
+.rovatok-bar-inner a img {
+  height: 7em;      /* nagyobb ikon */
+  max-height: 660px;
+}
+
+@keyframes rovat-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+
+
+.rovatok-bar-scroll:hover .rovatok-bar-inner {
+  animation-play-state: paused;
+}}
   .pelican-img {
     position: static;
     text-align: center;

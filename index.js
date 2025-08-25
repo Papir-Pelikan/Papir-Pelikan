@@ -650,3 +650,39 @@ document.addEventListener('DOMContentLoaded', function() {
     lastScrollPosition = currentScrollPosition;
   });
 });
+
+// Beállítjuk a cél dátumot szeptember 1-re (az aktuális évben)
+  const currentYear = new Date().getFullYear();
+  const targetDate = new Date(currentYear, 8, 1); // 8 = szeptember (0-tól indexelődik)
+  
+  // Ellenőrizzük, ha már elmúlt szeptember 1, akkor következő évre állítjuk
+  if (new Date() > targetDate) {
+    targetDate.setFullYear(currentYear + 1);
+  }
+  
+  function updateCountdown() {
+    const now = new Date();
+    const diff = targetDate - now;
+    
+    // Ha lejárt az idő
+    if (diff <= 0) {
+      document.getElementById('countdown-timer').innerHTML = "A közzététel elérhető!";
+      return;
+    }
+    
+    // Számoljuk ki a napókat, órákat, perceket, másodperceket
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+    const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+    const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+    
+    // Megjelenítés formázása
+    document.getElementById('countdown-timer').innerHTML = 
+      `${days} : ${hours} : ${minutes} : ${seconds} `;
+  }
+  
+  // Frissítjük az időzítőt másodpercenként
+  updateCountdown();
+  setInterval(updateCountdown, 1000);
+
+  

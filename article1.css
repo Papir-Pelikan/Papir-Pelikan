@@ -111,7 +111,7 @@ main p {
 
 .cimek {
   font-size: 1.5em;
-  padding: 0 px;
+  padding: 0 8px;
   margin-right: 5px;
   color: #8889B0;
   text-decoration: none;
@@ -122,22 +122,11 @@ main p {
 
 .cimek-2 {
   font-size: 1.0em;
-  padding: 0 px;
+  padding: 0 8px;
   margin-right: 5px;
   color: #8889B0;
   font-family: 'Helvetica', serif;
 
-  text-decoration: none;
-  height: 2.2em;
-  display: flex;
-  align-items: center;
-}
-
-.cimek-rangers {
-  font-size: 1.5em;
-  padding: 0 px;
-  margin-right: 5px;
-  color: #144DD6;
   text-decoration: none;
   height: 2.2em;
   display: flex;
