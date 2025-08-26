@@ -2075,8 +2075,9 @@ img {
       background-color: #FCEAC1;
       padding: 2px;
       border-radius: 10px;
-      font-family: Abril Fatface, sans-serif;
-      font-size: 1.1em;
+      font-family: Times New Roman;
+      font-weight: bold;
+      font-size: 1.3em;
       line-height: 1.6;
       max-width: max;
       margin: 20px auto;
@@ -2091,9 +2092,10 @@ img {
       background-color: #70ABC6;
       padding: 1x;
       border-radius: 1px;
-      font-family: Abril Fatface, sans-serif;
+      font-family: Times New Roman;
+      font-weight: bold;
       color: #FFFAEF;
-      font-size: 1.1em;
+      font-size: 1.3em;
       line-height: 1.6;
       max-width: max;
       margin: 20px auto;
@@ -2107,9 +2109,10 @@ img {
         .onallo-hatter2 {
       background-color: #70ABC6;
       border-radius: 1px;
-      font-family: Abril Fatface, sans-serif;
+      font-family: Times New Roman;
+      font-weight: bold;
       color: #FFFAEF;
-      font-size: 1.1em;
+      font-size: 1.3em;
       line-height: 1.6;
       max-width: max;
       margin: 20px auto;
@@ -2122,13 +2125,30 @@ img {
             .deutschblick-hatter {
       background-color: #085bff;
       border-radius: 1px;
-      font-family: Abril Fatface, sans-serif;
+      font-family: Times New Roman;
       color: #FFFAEF;
-      font-size: 1.1em;
+      font-size: 1.3em;
       line-height: 1.6;
       max-width: max;
       margin: 20px auto;
       text-align: center;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
+
+        .iskolank-elete-hatter {
+      background-color: #2D5C71;
+      padding: 1x;
+      border-radius: 1px;
+      font-family: Times New Roman;
+      font-weight: bold;
+      color: #FFFAEF;
+      font-size: 1.3em;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
         margin: 20px 0 20px 0; /* Csak fent és lent van margó */
 
 
