@@ -111,7 +111,6 @@ main p {
 
 .cimek {
   font-size: 1.5em;
-  padding: 0 8px;
   margin-right: 5px;
   color: #8889B0;
   text-decoration: none;
@@ -122,7 +121,6 @@ main p {
 
 .cimek {
   font-size: 1.5em;
-  padding: 0 8px;
   margin-right: 5px;
   color: #8889B0;
   text-decoration: none;
@@ -144,12 +142,51 @@ main p {
   align-items: center;
 }
 
+.cimek-rangers {
+  font-size: 1.5em;
+  margin-right: 5px;
+  color: #144DD6;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+}
+
+.cimek-deutschblick {
+  font-size: 1.5em;
+  margin-right: 5px;
+  color: #0072D6;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+}
+
 .cimek-pp {
     font-family: 'Times New Roman', Times, serif ;
   font-size: 1.5em;
-  padding: 0 8px;
   margin-right: 5px;
   color: #8889B0;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+}
+
+.cimek-divatrovat {
+  font-size: 1.5em;
+  margin-right: 5px;
+  color: #006188;
+  text-decoration: none;
+  height: 2.2em;
+  display: flex;
+  align-items: center;
+}
+
+.cimek-ajanlok {
+  font-size: 1.5em;
+  margin-right: 5px;
+  color: #5D729C;
   text-decoration: none;
   height: 2.2em;
   display: flex;

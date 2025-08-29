@@ -1,0 +1,848 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papír-Pelikán Admin | Biztonságos Bejelentkezés</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <style>
+        /* Alap stílusok */
+
+          table, th, td {
+    border: 3px solid white;
+    border-collapse: collapse;
+    padding: 8px;
+    text-align: left;
+  }
+        body {
+            margin: 0;
+            font-family: 'Abril Fatface', serif;
+            background: linear-gradient(135deg, #2c4049 0%, #1a262c 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+            position: relative;
+        }
+
+        .site-logo img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+        }
+
+        /* Bejelentkezési konténer */
+        .login-container {
+            max-width: 450px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .login-container h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            font-family: 'Abril Fatface', serif;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: #9B5E3A;
+            box-shadow: 0 0 10px rgba(155, 94, 58, 0.5);
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: rgba(255,255,255,0.5);
+            transition: color 0.3s;
+        }
+
+        .toggle-password:hover {
+            color: #9B5E3A;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #9B5E3A, #7D4627);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Abril Fatface', serif;
+            font-size: 18px;
+            transition: all 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .login-form button:hover {
+            background: linear-gradient(to right, #8a5332, #6c3c21);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+        }
+
+        .login-form button:active {
+            transform: translateY(0);
+        }
+
+        /* Felhasználó választó stílus */
+        .user-select {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .user {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            padding: 15px;
+            border-radius: 10px;
+            transition: all 0.3s;
+        }
+
+        .user:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+
+        .user.selected {
+            background: rgba(155, 94, 58, 0.2);
+            border: 1px solid #9B5E3A;
+        }
+
+        .user img {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 10px;
+            border: 3px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .user.selected img {
+            border-color: #9B5E3A;
+        }
+
+        .user span {
+            font-size: 16px;
+        }
+
+        /* Profil dropdown stílusok - JAVÍTOTT */
+        .profile-dropdown-container {
+            position: relative;
+            display: inline-block;
+            z-index: 1001; /* Ez biztosítja, hogy a dropdown mindig látható legyen */
+        }
+
+        .user2 {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            cursor: pointer;
+            padding: 8px 15px;
+            border-radius: 30px;
+            transition: all 0.3s;
+            gap: 10px;
+        }
+
+        .user2:hover {
+            background: rgba(155, 94, 58, 0.2);
+        }
+
+        .user2 img {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid rgba(255, 255, 255, 0.2);
+            transition: all 0.3s;
+        }
+
+        .user2 span {
+            font-size: 16px;
+            white-space: nowrap;
+        }
+.profile-dropdown {
+    position: absolute;
+    background: rgba(44, 64, 73, 0.95);
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    min-width: 200px;
+    z-index: 9999; /* mindig legfelül */
+    display: none;
+    top:-60%;
+        transform: translateX(70%);
+
+    margin-left: 10px;
+    backdrop-filter: blur(10px);
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+
+
+        .profile-dropdown.show {
+            display: block;
+            animation: fadeIn 0.3s ease-out;
+        }
+
+        .dropdown-item {
+            padding: 12px 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #fff;
+            text-decoration: none;
+            transition: all 0.3s;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            cursor: pointer;
+        }
+
+        .dropdown-item:last-child {
+            border-bottom: none;
+        }
+
+        .dropdown-item:hover {
+            background: rgba(155, 94, 58, 0.3);
+        }
+
+        .dropdown-item i {
+            width: 20px;
+            text-align: center;
+        }
+
+        /* Admin irányítópult */
+        .admin-dashboard {
+            width: 100%;
+            display: none;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard-card h3 {
+            color: #9B5E3A;
+            border-bottom: 2px dotted rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            color: #9B5E3A;
+            text-align: center;
+            margin: 15px 0;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-btn {
+            padding: 12px;
+            background: rgba(44, 64, 73, 0.5);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Abril Fatface', serif;
+            transition: all 0.3s;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .action-btn i {
+            font-size: 18px;
+        }
+
+        .action-btn:hover {
+            background: rgba(57, 78, 88, 0.7);
+        }
+
+        .logout-btn {
+            background: rgba(231, 76, 60, 0.7);
+        }
+
+        .logout-btn:hover {
+            background: rgba(192, 57, 43, 0.8);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 15px;
+            display: none;
+            font-size: 16px;
+            padding: 10px;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 6px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .security-info {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .security-info h4 {
+            margin-top: 0;
+            color: #9B5E3A;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .security-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(46, 204, 113, 0.15);
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+                position: relative;
+    z-index: 2000;
+            }
+            
+            .user-select {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .profile-dropdown {
+                right: auto;
+                left: 0;
+            }
+        }
+
+        /* Animációk */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            width: 0;
+            background: linear-gradient(to right, #9B5E3A, #7D4627);
+            border-radius: 3px;
+            margin-top: 10px;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+   <div class="container">
+        <!-- Bejelentkezési képernyő -->
+        <div id="loginScreen" class="fade-in">
+            <header>
+                <div class="site-logo">
+                    <img src="/papirpelikanlogo.svg" alt="Papír-Pelikán logó">
+                </div>
+                <div>
+                    <span>Biztonságos Admin Portál</span>
+                </div>
+            </header>
+
+            <div class="login-container">
+                <h2><i class="fas fa-lock"></i> Admin Bejelentkezés</h2>
+                
+                <div class="user-select">
+                    <div class="user" data-user="Ádi">
+                        <img src="adi.png" alt="Ádi profilképe">
+                        <span>Ádi</span>
+                    </div>
+                    <div class="user" data-user="Mesi">
+                        <img src="mesi.png" alt="Mesi profilképe">
+                        <span>Mesi</span>
+                    </div>
+                </div>
+
+                <div id="passwordContainer" style="display: none;">
+                    <h3 id="selectedUser"></h3>
+                    <form class="login-form" id="loginForm">
+                        <div class="password-container">
+                            <input type="password" id="password" placeholder="Jelszó" required>
+                            <span class="toggle-password" id="togglePassword">
+                                <i class="fas fa-eye"></i>
+                            </span>
+                        </div>
+                        <div class="progress-bar" id="passwordStrengthBar"></div>
+                        <button type="submit" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Belépés</button>
+                    </form>
+                    <div class="error-message" id="errorMessage"></div>
+                </div>
+
+                <div class="security-info">
+                    <h4><i class="fas fa-shield-alt"></i> Biztonsági információk</h4>
+                    <div class="security-features">
+                        <div class="security-badge"><i class="fas fa-check-circle"></i> Proof-of-Work</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin irányítópult (elrejtve kezdetben) -->
+        <div id="adminDashboard" class="admin-dashboard">
+            <header>
+                <div class="site-logo">
+                    <img src="/papirpelikanlogo.svg" alt="Papír-Pelikán logó">
+                </div>
+                
+                <!-- Profil + dropdown -->
+                <div id="profileDropdownContainer" class="profile-dropdown-container">
+                    <div id="dashboardUser" class="user2">
+                        <img id="dashboardUserImg" src="" alt="Bejelentkezett felhasználó">
+                        <span id="dashboardUserName"></span>
+                        <i class="fas fa-chevron-down"></i>
+                    </div>
+
+                    <!-- Dropdown menü -->
+                    <div id="profileDropdown" class="profile-dropdown">
+                        <div class="dropdown-item">
+                            <i class="fas fa-user"></i> <span id="dropdownUserLabel"></span>
+                        </div>
+                        <a href="beallitasok.html" class="dropdown-item">
+                            <i class="fas fa-cog"></i> Beállítások
+                        </a>
+                        <div id="logoutDropdownItem" class="dropdown-item">
+                            <i class="fas fa-sign-out-alt"></i> Kijelentkezés
+                        </div>
+                    </div>
+                </div>
+                
+                <div>
+                    <span id="adminGreeting">Adminisztrációs felület</span>
+                </div>
+            </header>
+
+                        <div class="iskolank-elete p">
+
+    <h2>
+        Verzióelőzmények
+    </h2>
+
+    <table style="width: 100%;"">
+  <thead>
+    <tr>
+      <th>Kiadási időpont</th>
+      <th>Tartalom, frissítési commit üzenet</th>
+      <th>Verifikálta</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>2025.08.28</td>
+      <td>Szerkesztőlista (Íróink) bővítése</td>
+      <td>Ádi</td>
+    </tr>
+    <tr>
+      <td>2025.08.28</td>
+      <td>Kompakt fájlkezelés, cikkek bővítése</td>
+      <td>Ádi</td>
+    </tr>
+   <tr>
+      <td>2025.08.26</td>
+      <td></td>
+      <td>Ádi</td>
+    </tr>   
+     
+    <tr>
+      <td>2025.08.19</td>
+      <td></td>
+      <td>Ádi</td>
+    </tr>
+    
+    <tr>
+      <td>2025.08.16</td>
+      <td></td>
+      <td>Ádi</td>
+    </tr>  
+    
+    <tr>
+      <td>2025.08.15</td>
+      <td></td>
+      <td>Ádi</td>
+    </tr>  
+    
+    <tr>
+      <td>2025.08.14</td>
+      <td></td>
+      <td>Ádi</td>
+    </tr>
+
+
+    <tr>
+      <td>2025.08.13</td>
+      <td>Első verzió, weboldal szerverre helyezése</td>
+      <td>Ádi</td>
+    </tr>
+  </tbody>
+</table>
+    </div>
+        </div>
+    </div>
+
+    <script>
+        // Felhasználó kiválasztása
+        document.querySelectorAll('.user').forEach(user => {
+            user.addEventListener('click', function() {
+                // Eltávolítjuk a korábbi kijelölést
+                document.querySelectorAll('.user').forEach(u => u.classList.remove('selected'));
+                
+                // Kijelöljük az aktuális felhasználót
+                this.classList.add('selected');
+                
+                // Beállítjuk a kiválasztott felhasználó nevét
+                const selectedUserName = this.getAttribute('data-user');
+                document.getElementById('selectedUser').textContent = selectedUserName + ' bejelentkezés';
+                
+                // Megjelenítjük a jelszó mezőt
+                document.getElementById('passwordContainer').style.display = 'block';
+                
+                // Fókusz a jelszómezőre
+                setTimeout(() => {
+                    document.getElementById('password').focus();
+                }, 100);
+            });
+        });
+
+        // Egyszerű SHA-256 hash kódolás (csak demonstráció)
+        async function sha256Hash(text) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Sózás hozzáadása a jelszóhash-eléshez
+        function addSalt(password, salt) {
+            return password + salt;
+        }
+
+        // Jelszó erősség indikátor
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength += 25;
+            if (/[A-Z]/.test(password)) strength += 25;
+            if (/[0-9]/.test(password)) strength += 25;
+            if (/[^A-Za-z0-9]/.test(password)) strength += 25;
+            
+            document.getElementById('passwordStrengthBar').style.width = strength + '%';
+            
+            if (strength < 50) {
+                document.getElementById('passwordStrengthBar').style.background = '#e74c3c';
+            } else if (strength < 75) {
+                document.getElementById('passwordStrengthBar').style.background = '#f39c12';
+            } else {
+                document.getElementById('passwordStrengthBar').style.background = '#2ecc71';
+            }
+        }
+
+        // Jelszó láthatóság váltása
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Jelszó erősség ellenőrzése
+        document.getElementById('password').addEventListener('input', function() {
+            checkPasswordStrength(this.value);
+        });
+
+        // Bejelentkezési folyamat
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            // Ellenőrizzük, hogy van-e kiválasztott felhasználó
+            const selectedUser = document.querySelector('.user.selected');
+            if (!selectedUser) {
+                document.getElementById('errorMessage').textContent = 'Kérjük, válassz felhasználót!';
+                document.getElementById('errorMessage').style.display = 'block';
+                return;
+            }
+            
+            const username = selectedUser.getAttribute('data-user');
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const loginBtn = document.getElementById('loginBtn');
+            
+            // Jelszó erősség ellenőrzése
+            if (password.length < 6) {
+                errorMessage.textContent = 'A jelszónak legalább 6 karakter hosszúnak kell lennie!';
+                errorMessage.style.display = 'block';
+                document.getElementById('loginForm').classList.add('shake');
+                setTimeout(() => {
+                    document.getElementById('loginForm').classList.remove('shake');
+                }, 500);
+                return;
+            }
+            
+            loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Feldolgozás...';
+            loginBtn.disabled = true;
+            
+            try {
+                // Szimuláljuk a bejelentkezési folyamatot
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Ellenőrzés (csak demonstráció)
+                if ((username === 'Ádi' && password === 'pelikan2024') || 
+                    (username === 'Mesi' && password === 'pelikan2024')) {
+                    // Sikeres bejelentkezés
+                    errorMessage.style.display = 'none';
+                    document.getElementById('loginScreen').style.display = 'none';
+                    document.getElementById('adminDashboard').style.display = 'block';
+                    document.getElementById('adminGreeting').textContent = `Üdvözöljük, ${username}!`;
+
+                    const dashboardUserImg = document.getElementById('dashboardUserImg');
+                    const dashboardUserName = document.getElementById('dashboardUserName');
+                    const dropdownUserLabel = document.getElementById('dropdownUserLabel');
+                    
+                    dashboardUserImg.src = username === 'Ádi' ? 'adi.png' : 'mesi.png';
+                    dashboardUserImg.alt = `${username} profilképe`;
+                    dashboardUserName.textContent = username;
+                    dropdownUserLabel.textContent = username;
+
+                    sessionStorage.setItem('adminLoggedIn', 'true');
+                    sessionStorage.setItem('adminUser', username);
+                } else {
+                    // Hibás bejelentkezés
+                    errorMessage.textContent = 'Hibás jelszó!';
+                    errorMessage.style.display = 'block';
+                    document.getElementById('loginForm').classList.add('shake');
+                    setTimeout(() => {
+                        document.getElementById('loginForm').classList.remove('shake');
+                    }, 500);
+                }
+
+            } catch (error) {
+                console.error('Hiba a bejelentkezés során:', error);
+                errorMessage.textContent = 'Hiba történt a bejelentkezés során. Kérjük, próbálja újra.';
+                errorMessage.style.display = 'block';
+            } finally {
+                loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Belépés';
+                loginBtn.disabled = false;
+            }
+        });
+
+        // Dropdown menü kezelése
+        document.addEventListener('DOMContentLoaded', function() {
+            const dashboardUser = document.getElementById('dashboardUser');
+            const profileDropdown = document.getElementById('profileDropdown');
+            
+            if (dashboardUser && profileDropdown) {
+                // Kattintás a profilra
+                dashboardUser.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    profileDropdown.classList.toggle('show');
+                });
+                
+                // Kijelentkezés a dropdown menüből
+                const logoutDropdownItem = document.getElementById('logoutDropdownItem');
+                if (logoutDropdownItem) {
+                    logoutDropdownItem.addEventListener('click', function() {
+                        if (confirm('Biztosan kijelentkezel?')) {
+                            sessionStorage.removeItem('adminLoggedIn');
+                            sessionStorage.removeItem('adminUser');
+                            document.getElementById('loginScreen').style.display = 'block';
+                            document.getElementById('adminDashboard').style.display = 'none';
+                            document.getElementById('password').value = '';
+                            document.getElementById('passwordStrengthBar').style.width = '0%';
+                            document.querySelectorAll('.user').forEach(u => u.classList.remove('selected'));
+                            document.getElementById('passwordContainer').style.display = 'none';
+                            profileDropdown.classList.remove('show');
+                        }
+                    });
+                }
+                
+                // Kattintás máshova bezárja a dropdown-ot
+                document.addEventListener('click', function() {
+                    profileDropdown.classList.remove('show');
+                });
+                
+                // Megakadályozzuk, hogy a dropdownra kattintva bezáródjon
+                profileDropdown.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                });
+            }
+        });
+
+        // Oldal betöltésekor ellenőrizzük a bejelentkezési állapotot
+        window.addEventListener('DOMContentLoaded', function() {
+            if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                const username = sessionStorage.getItem('adminUser') || 'Admin';
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+                document.getElementById('adminGreeting').textContent = `Üdvözöljük, ${username}!`;
+
+                const dashboardUserImg = document.getElementById('dashboardUserImg');
+                const dashboardUserName = document.getElementById('dashboardUserName');
+                const dropdownUserLabel = document.getElementById('dropdownUserLabel');
+                
+                dashboardUserImg.src = username === 'Ádi' ? 'adi.png' : 'mesi.png';
+                dashboardUserImg.alt = `${username} profilképe`;
+                dashboardUserName.textContent = username;
+                dropdownUserLabel.textContent = username;
+
+                // Automatikus kijelentkezés
+                setTimeout(function() {
+                    if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                        sessionStorage.removeItem('adminLoggedIn');
+                        sessionStorage.removeItem('adminUser');
+                        alert('Automatikus kijelentkezés történt inaktivitás miatt.');
+                        document.getElementById('loginScreen').style.display = 'block';
+                        document.getElementById('adminDashboard').style.display = 'none';
+                    }
+                }, 30 * 60 * 1000); // 30 perc
+            }
+        });
+        
+    </script>
+
+    <div id="profileDropdown" class="profile-dropdown">
+    <div class="dropdown-item">
+        <i class="fas fa-user"></i> <span id="dropdownUserLabel"></span>
+    </div>
+    <a href="beallitasok.html" class="dropdown-item">
+        <i class="fas fa-cog"></i> Beállítások
+    </a>
+    <div id="logoutDropdownItem" class="dropdown-item">
+        <i class="fas fa-sign-out-alt"></i> Kijelentkezés
+    </div>
+</div>
+</body>
+</html>

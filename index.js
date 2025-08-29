@@ -651,6 +651,34 @@ document.addEventListener('DOMContentLoaded', function() {
   });
 });
 
+document.addEventListener('DOMContentLoaded', function() {
+  const infoIcon = document.querySelector('.info-icon');
+  const explanationWrapper = document.querySelector('.fejlec-megjegyzes-divatrovat-wrapper');
+  let isExplanationOpen = false;
+
+  // Kattintásra nyit/zár
+  if (infoIcon && explanationWrapper) {
+    infoIcon.addEventListener('click', function() {
+      isExplanationOpen = !isExplanationOpen;
+      explanationWrapper.classList.toggle('open', isExplanationOpen);
+    });
+  }
+
+  // Görgetéskor eltűnik
+  let lastScrollPosition = 0;
+  window.addEventListener('scroll', function() {
+    const currentScrollPosition = window.scrollY;
+    
+    // Ha lefelé görgetünk és a magyarázat nyitva van
+    if (currentScrollPosition > lastScrollPosition && isExplanationOpen) {
+      explanationWrapper.classList.remove('open');
+      isExplanationOpen = false;
+    }
+    
+    lastScrollPosition = currentScrollPosition;
+  });
+});
+
 // Beállítjuk a cél dátumot szeptember 1-re (az aktuális évben)
   const currentYear = new Date().getFullYear();
   const targetDate = new Date(currentYear, 8, 1); // 8 = szeptember (0-tól indexelődik)

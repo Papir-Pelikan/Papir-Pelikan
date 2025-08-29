@@ -851,7 +851,10 @@ img {
         transition: color 0.2s ease;
         display: block;           /* FONTOS: az egész blokk legyen kattintható */
     }
+.onallo-kep {
+    width: 100%;
 
+    }
     .onallo-link:hover {
         color: #000;           /* Sötétebb meleg barna hoverkor */
     }
@@ -1133,7 +1136,7 @@ img {
   color: #006386 !important;
   -webkit-text-stroke: 1px #000;
   text-stroke: 1px #000;
-}
+} 
 
 /* Frissített dropdown stílusok */
 .dropdown2 {
@@ -2087,6 +2090,20 @@ img {
 
     }
 
+        .rangers-hatter {
+      background-color: #79A0FF;
+      padding: 2px;
+      font-family: Times New Roman;
+      font-weight: bold;
+      font-size: 1.3em;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
 
     .onallo-hatter {
       background-color: #70ABC6;
@@ -2121,11 +2138,27 @@ img {
 
 
     }
+    .szezonalis-hatter {
+      background-color: #069bd6;
+      padding: 2px;
+      font-family: Times New Roman;
+      font-weight: bold;
+      color:#fdf7eb;
+      font-size: 1.3em;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
 
             .deutschblick-hatter {
       background-color: #085bff;
       border-radius: 1px;
       font-family: Times New Roman;
+      font-weight: bold;
       color: #FFFAEF;
       font-size: 1.3em;
       line-height: 1.6;
@@ -2144,6 +2177,38 @@ img {
       font-family: Times New Roman;
       font-weight: bold;
       color: #FFFAEF;
+      font-size: 1.3em;
+      line-height: 1.6;
+      max-width: max;
+      margin: 20px auto;
+      text-align: left;
+        margin: 20px 0 20px 0; /* Csak fent és lent van margó */
+
+
+    }
+    .fejlec-megjegyzes-divatrovat-wrapper {
+  overflow: hidden;
+  max-height: 0;
+  transition: max-height 0.3s ease-out;
+  background: #006188;
+  color: #FFFAEF;
+}
+
+.fejlec-megjegyzes-divatrovat-wrapper.open {
+  max-height: 100px; /* Elég nagy érték, hogy biztosan látszódjon */
+}
+
+.fejlec-megjegyzes-divatrovat {
+  padding: 10px;
+  text-align: center;
+}
+
+        .divatrovat-hatter {
+      background-color: #069BD6;
+      padding: 2px;
+      font-family: Times New Roman;
+      color: #FFFAEF;
+      font-weight: bold;
       font-size: 1.3em;
       line-height: 1.6;
       max-width: max;
@@ -2235,7 +2300,7 @@ img {
   overflow: hidden;
   max-height: 0;
   transition: max-height 0.3s ease-out;
-  background: #085bff;
+  background: #144dd6;
 }
 
 .fejlec-megjegyzes-rangers-wrapper.open {

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Papír-Pelikán</title>
 <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="article1.css">
-<link rel="stylesheet" href="index.css">
+<link rel="stylesheet" href="../../article1.css">
+<link rel="stylesheet" href="../../index.css">
 
 </head>
 <body>
@@ -19,14 +19,14 @@
 </div>
     
 <div class="site-logo">
-<a href="index.html">
-    <img src="papirpelikanlogo.svg" alt="Papír-Pelikán logó">
+<a href="/index.html">
+    <img src="/papirpelikanlogo.svg" alt="Papír-Pelikán logó">
 </a>    </div>
     
     <div class="idojaras">
     <div class="main-weather" id="weather-toggle">
         <div class="temp-display">
-            <img src="thermometer.svg" alt="Hőmérséklet">
+            <img src="/thermometer.svg" alt="Hőmérséklet">
             <span class="delutan">30°C</span>
         </div>
         <span class="toggle-icon">▼</span>
@@ -35,11 +35,11 @@
     <!-- Lenyíló rész (alapból rejtve) -->
     <div class="weather-details">
         <div class="sunrise-info">
-            <img src="napkelte.png" alt="Napkelte">
+            <img src="/napkelte.png" alt="Napkelte">
             <span class="napkelte">5:10</span>
         </div>
         <div class="sunset-info">
-            <img src="napnyugta.svg" alt="Napnyugta">
+            <img src="/napnyugta.svg" alt="Napnyugta">
             <span class="napnyugta">21:00</span>
         </div>
     </div>
@@ -113,37 +113,20 @@
 <div style="display: flex; flex-wrap: wrap; background: #2c4049; color: white; padding: 1px; font-weight: bold; justify-content: center; align-items: center; gap: 10px;">
 <div class="rovatok-bar-scroll">
   <div class="rovatok-bar-inner" id="rovatok-bar-inner">
-    <a href="konyvajanlo-cikkeink.html"><img src="konyvajanloink.svg" alt="Könyvajánlóink" ></a>
-    <a href="iskolank-elete.html"><img src="onallo.svg" alt="Iskolánk élete"></a>
-    <a href="tanaraink.html"><img src="lictech.svg" alt="Tanáraink"></a>
-    <a href="esemenyek.html"><img src="rangers.svg" alt="Események"></a>
-    <a href="esemenyek.html"><img src="deutschblick.svg" alt="Események"></a>
-    <a href="esemenyek.html"><img src="iskolankelete.svg" alt="Események"></a>
-    <a href="esemenyek.html"><img src="hitelet.svg" alt="Események"></a>
+    <a href="/Rovatok/Rovatok-oldal/ajanlo-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/ajanloink.svg" alt="Ajánlóink" ></a>
+    <a href="/Rovatok/Rovatok-oldal/onallo-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/onallo.svg" alt="Iskolánk élete"></a>
+    <a href="/Rovatok/Rovatok-oldal/lictech-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/lictech.svg" alt="Tanáraink"></a>
+    <a href="/Rovatok/Rovatok-oldal/rangers-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/rangersikon.svg" alt="Események"></a>
+    <a href="/Rovatok/Rovatok-oldal/deutschblick-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/deutschblick.svg" alt="Események"></a>
+    <a href="/Rovatok/Rovatok-oldal/iskolank-elete-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/iskolankelete.svg" alt="Események"></a>
+    <a href="/Rovatok/Rovatok-oldal/hiteleti-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/hitelet.svg" alt="Események"></a>
+    <a href="/Rovatok/Rovatok-oldal/divatrovat-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/divat.svg" alt="Események"></a>
+    <a href="/Rovatok/Rovatok-oldal/ajanlo-cikkeink.html"><img src="/Rovatok/Rovatok-ikon/ajanloink.svg" alt="Események"></a>
+
   </div>
 </div>
 
 
-<div class="kiemelt-tartalmak">
-        <h2>Kiemelt cikkeink</h2>
-        <div class="cikk-grid">
-
-            
-            <div class="cikk-kartya">
-                <img src="https://placehold.co/300x200/4a6572/ffffff?text=Ineterjú" alt="Interjú">
-                <h3>Beszélgetés az új tanárokkal</h3>
-                <p>Exkluzív interjú az idei évben csatlakozó oktatóinkkal</p>
-                <a href="#" class="tovabb-olvas">Tovább olvasom →</a>
-            </div>
-            
-            <div class="cikk-kartya">
-                <img src="https://placehold.co/300x200/4a6572/ffffff?text=Tudomány" alt="Tudomány">
-                <h3>Diákok tudományos eredményei</h3>
-                <p>Ismerd meg a legújabb kutatásokat és felfedezéseket</p>
-                <a href="#" class="tovabb-olvas">Tovább olvasom →</a>
-            </div>
-        </div>
-    </div>
 
 
     </main>
@@ -154,7 +137,7 @@ document.addEventListener('DOMContentLoaded', function() {
   inner.innerHTML += inner.innerHTML;
 });
 </script>
-<script src="index.js"></script>
+<script src="/index.js"></script>
 <script>
   // Magyar napok nevei
   const napok = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];

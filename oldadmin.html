@@ -1,0 +1,614 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Papír-Pelikán Admin | Biztonságos Bejelentkezés</title>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Alap stílusok */
+        body {
+            margin: 0;
+            font-family: 'Abril Fatface', serif;
+            background: linear-gradient(135deg, #2c4049 0%, #1a262c 100%);
+            color: #fff;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        header {
+            padding: 15px 20px;
+            border-bottom: 1px solid rgba(255,255,255,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: nowrap;
+            white-space: nowrap;
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 10px;
+            margin-bottom: 30px;
+            backdrop-filter: blur(10px);
+        }
+
+        .site-logo img {
+            height: 60px;
+            width: auto;
+            filter: drop-shadow(0 0 5px rgba(255,255,255,0.3));
+        }
+
+        /* Bejelentkezési konténer */
+        .login-container {
+            max-width: 450px;
+            width: 100%;
+            margin: 20px auto;
+            padding: 40px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            text-align: center;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+        }
+
+        .login-container h2 {
+            color: #fff;
+            margin-bottom: 30px;
+            font-size: 28px;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .login-form input {
+            width: 100%;
+            padding: 15px;
+            margin: 12px 0;
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 8px;
+            font-family: 'Abril Fatface', serif;
+            box-sizing: border-box;
+            background: rgba(0, 0, 0, 0.2);
+            color: #fff;
+            font-size: 16px;
+            transition: all 0.3s;
+        }
+
+        .login-form input:focus {
+            outline: none;
+            border-color: #9B5E3A;
+            box-shadow: 0 0 10px rgba(155, 94, 58, 0.5);
+        }
+
+        .password-container {
+            position: relative;
+        }
+
+        .toggle-password {
+            position: absolute;
+            right: 15px;
+            top: 50%;
+            transform: translateY(-50%);
+            cursor: pointer;
+            color: rgba(255,255,255,0.5);
+            transition: color 0.3s;
+        }
+
+        .toggle-password:hover {
+            color: #9B5E3A;
+        }
+
+        .login-form button {
+            width: 100%;
+            padding: 15px;
+            background: linear-gradient(to right, #9B5E3A, #7D4627);
+            color: white;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            font-family: 'Abril Fatface', serif;
+            font-size: 18px;
+            transition: all 0.3s;
+            margin-top: 20px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .login-form button:hover {
+            background: linear-gradient(to right, #8a5332, #6c3c21);
+            box-shadow: 0 6px 20px rgba(0,0,0,0.3);
+            transform: translateY(-2px);
+        }
+
+        .login-form button:active {
+            transform: translateY(0);
+        }
+
+        /* Admin irányítópult */
+        .admin-dashboard {
+            width: 100%;
+            display: none;
+        }
+
+        .dashboard-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+
+        .dashboard-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 25px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.1);
+            transition: transform 0.3s;
+        }
+
+        .dashboard-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .dashboard-card h3 {
+            color: #9B5E3A;
+            border-bottom: 2px dotted rgba(255,255,255,0.2);
+            padding-bottom: 15px;
+            margin-top: 0;
+            font-size: 22px;
+        }
+
+        .stat-number {
+            font-size: 2.5em;
+            color: #9B5E3A;
+            text-align: center;
+            margin: 15px 0;
+            text-shadow: 0 2px 5px rgba(0,0,0,0.3);
+        }
+
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        .action-btn {
+            padding: 12px;
+            background: rgba(44, 64, 73, 0.5);
+            color: white;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-family: 'Abril Fatface', serif;
+            transition: all 0.3s;
+            text-align: left;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .action-btn i {
+            font-size: 18px;
+        }
+
+        .action-btn:hover {
+            background: rgba(57, 78, 88, 0.7);
+        }
+
+        .logout-btn {
+            background: rgba(231, 76, 60, 0.7);
+        }
+
+        .logout-btn:hover {
+            background: rgba(192, 57, 43, 0.8);
+        }
+
+        .error-message {
+            color: #e74c3c;
+            margin-top: 15px;
+            display: none;
+            font-size: 16px;
+            padding: 10px;
+            background: rgba(231, 76, 60, 0.1);
+            border-radius: 6px;
+            border-left: 4px solid #e74c3c;
+        }
+
+        .security-info {
+            margin-top: 25px;
+            padding: 15px;
+            background: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+            font-size: 14px;
+            text-align: left;
+        }
+
+        .security-info h4 {
+            margin-top: 0;
+            color: #9B5E3A;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .security-features {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 15px;
+            margin-top: 15px;
+        }
+
+        .security-badge {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 8px 12px;
+            background: rgba(46, 204, 113, 0.15);
+            border-radius: 20px;
+            font-size: 13px;
+        }
+
+        /* Responsive design */
+        @media (max-width: 768px) {
+            .login-container {
+                padding: 25px;
+                margin: 10px;
+            }
+            
+            .dashboard-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            header {
+                flex-direction: column;
+                text-align: center;
+                gap: 15px;
+            }
+        }
+
+        /* Animációk */
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease-out forwards;
+        }
+
+        .shake {
+            animation: shake 0.5s ease-in-out;
+        }
+
+        @keyframes shake {
+            0%, 100% { transform: translateX(0); }
+            20%, 60% { transform: translateX(-10px); }
+            40%, 80% { transform: translateX(10px); }
+        }
+
+        /* Progress bar */
+        .progress-bar {
+            height: 5px;
+            width: 0;
+            background: linear-gradient(to right, #9B5E3A, #7D4627);
+            border-radius: 3px;
+            margin-top: 10px;
+            transition: width 0.5s;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- Bejelentkezési képernyő -->
+        <div id="loginScreen" class="fade-in">
+            <header>
+                <div class="site-logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjEwIiB5PSI0MCIgZm9udC1mYW1pbHk9IkFwcGxlIFN5c3RlbSwgQmxpbk1hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsIFJvYm90bywgT3h5Z2VuLCBVYnVudHMsICdIZWx2ZXRpY2EgTmV1ZScsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZpbGw9IiNmZmYiPlBhcMOtci1QZWxpa8OhbjwvdGV4dD48L3N2Zz4=" alt="Papír-Pelikán logó">
+                </div>
+                <div>
+                    <span>Biztonságos Admin Portál</span>
+                </div>
+            </header>
+
+            <div class="login-container">
+                <h2><i class="fas fa-lock"></i> Admin Bejelentkezés</h2>
+                <form class="login-form" id="loginForm">
+                    <input type="text" id="username" placeholder="Felhasználónév" required autocomplete="username">
+                    <div class="password-container">
+                        <input type="password" id="password" placeholder="Jelszó" required autocomplete="current-password">
+                        <span class="toggle-password" id="togglePassword">
+                            <i class="far fa-eye"></i>
+                        </span>
+                    </div>
+                    <div class="progress-bar" id="passwordStrengthBar"></div>
+                    <button type="submit" id="loginBtn"><i class="fas fa-sign-in-alt"></i> Belépés</button>
+                    <div class="error-message" id="errorMessage">Hibás felhasználónév vagy jelszó!</div>
+                </form>
+
+                <div class="security-info">
+                    <h4><i class="fas fa-shield-alt"></i> Biztonsági információk</h4>
+                    <p>Rendszerünk korszerű biztonsági technológiát használ, soha nem tároljuk a jelszavakat visszafejthető formában.</p>
+                    
+                    <div class="security-features">
+                        <div class="security-badge">
+                            <i class="fas fa-hashtag"></i> Hash-elt jelszavak
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-key"></i> Sózás (Salting)
+                        </div>
+                        <div class="security-badge">
+                            <i class="fas fa-clock"></i> Munkabizonyíték (Proof-of-Work)
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Admin felület (csak bejelentkezés után látható) -->
+        <div id="adminDashboard" class="admin-dashboard">
+            <header>
+                <div class="site-logo">
+                    <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMjAwIiBoZWlnaHQ9IjYwIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciPjx0ZXh0IHg9IjEwIiB5PSI0MCIgZm9udC1mYW1pbHk9IkFwcGxlIFN5c3RlbSwgQmxpbk1hY1N5c3RlbUZvbnQsICdTZWdvZSBVSScsIFJvYm90bywgT3h5Z2VuLCBVYnVudHMsICdIZWx2ZXRpY2EgTmV1ZScsIHNhbnMtc2VyaWYiIGZvbnQtc2l6ZT0iMjQiIGZsb3Itb3BhY2l0eT0iMC41IiBmaWxsPSIjZmZmIj5QYXDDtXItUGVsaWvDoW48L3RleHQ+PC9zdmc+" alt="Papír-Pelikán logó">
+                </div>
+                <div>
+                    <span id="adminGreeting">Üdvözöljük, Admin!</span>
+                    <button class="action-btn logout-btn" id="logoutBtn"><i class="fas fa-sign-out-alt"></i> Kijelentkezés</button>
+                </div>
+            </header>
+
+            <div class="admin-content">
+                <h2><i class="fas fa-tachometer-alt"></i> Adminisztrációs Irányítópult</h2>
+                
+                <div class="dashboard-grid">
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-chart-bar"></i> Statisztikák</h3>
+                        <div class="stat-number">24</div>
+                        <p>Összes cikk</p>
+                        <div class="stat-number">8</div>
+                        <p>Összes szerző</p>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-newspaper"></i> Cikk Kezelés</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn"><i class="fas fa-plus"></i> Új cikk hozzáadása</button>
+                            <button class="action-btn"><i class="fas fa-edit"></i> Cikkek szerkesztése</button>
+                            <button class="action-btn"><i class="fas fa-trash"></i> Cikkek törlése</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-user-edit"></i> Szerző Kezelés</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn"><i class="fas fa-user-plus"></i> Új szerző hozzáadása</button>
+                            <button class="action-btn"><i class="fas fa-users-cog"></i> Szerzők kezelése</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-folder"></i> Rovat Kezelés</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn"><i class="fas fa-folder-plus"></i> Rovatok kezelése</button>
+                            <button class="action-btn"><i class="fas fa-tags"></i> Kategóriák kezelése</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-images"></i> Képek Kezelése</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn"><i class="fas fa-upload"></i> Képfeltöltés</button>
+                            <button class="action-btn"><i class="fas fa-photo-video"></i> Mediatár</button>
+                        </div>
+                    </div>
+                    
+                    <div class="dashboard-card">
+                        <h3><i class="fas fa-cog"></i> Beállítások</h3>
+                        <div class="action-buttons">
+                            <button class="action-btn"><i class="fas fa-wrench"></i> Oldal beállításai</button>
+                            <button class="action-btn"><i class="fas fa-user-shield"></i> Felhasználók kezelése</button>
+                            <button class="action-btn"><i class="fas fa-lock"></i> Biztonsági beállítások</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        // Egyszerű SHA-256 hash kódolás (csak demonstráció)
+        // Valós alkalmazásban használj külső könyvtárat vagy szerver oldali megoldást
+        async function sha256Hash(text) {
+            const encoder = new TextEncoder();
+            const data = encoder.encode(text);
+            const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+            const hashArray = Array.from(new Uint8Array(hashBuffer));
+            return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+        }
+
+        // Sózás hozzáadása a jelszóhash-eléshez
+        function addSalt(password, salt) {
+            return password + salt;
+        }
+
+        // Egyszerű munkabizonyíték (proof-of-work) megvalósítás
+        async function proofOfWork(passwordHash, difficulty = 2) {
+            let nonce = 0;
+            let prefix = '0'.repeat(difficulty);
+            
+            while (true) {
+                let hash = await sha256Hash(passwordHash + nonce);
+                if (hash.startsWith(prefix)) {
+                    return { hash, nonce };
+                }
+                nonce++;
+            }
+        }
+
+        // Jelszó erősség indikátor
+        function checkPasswordStrength(password) {
+            let strength = 0;
+            if (password.length >= 8) strength += 25;
+            if (/[A-Z]/.test(password)) strength += 25;
+            if (/[0-9]/.test(password)) strength += 25;
+            if (/[^A-Za-z0-9]/.test(password)) strength += 25;
+            
+            document.getElementById('passwordStrengthBar').style.width = strength + '%';
+            
+            if (strength < 50) {
+                document.getElementById('passwordStrengthBar').style.background = '#e74c3c';
+            } else if (strength < 75) {
+                document.getElementById('passwordStrengthBar').style.background = '#f39c12';
+            } else {
+                document.getElementById('passwordStrengthBar').style.background = '#2ecc71';
+            }
+        }
+
+        // Jelszó láthatóság váltása
+        document.getElementById('togglePassword').addEventListener('click', function() {
+            const passwordField = document.getElementById('password');
+            const icon = this.querySelector('i');
+            
+            if (passwordField.type === 'password') {
+                passwordField.type = 'text';
+                icon.classList.remove('fa-eye');
+                icon.classList.add('fa-eye-slash');
+            } else {
+                passwordField.type = 'password';
+                icon.classList.remove('fa-eye-slash');
+                icon.classList.add('fa-eye');
+            }
+        });
+
+        // Jelszó erősség ellenőrzése
+        document.getElementById('password').addEventListener('input', function() {
+            checkPasswordStrength(this.value);
+        });
+
+        // Bejelentkezési folyamat
+        document.getElementById('loginForm').addEventListener('submit', async function(e) {
+            e.preventDefault();
+            
+            const username = document.getElementById('username').value;
+            const password = document.getElementById('password').value;
+            const errorMessage = document.getElementById('errorMessage');
+            const loginBtn = document.getElementById('loginBtn');
+            
+            // Jelszó erősség ellenőrzése
+            if (password.length < 6) {
+                errorMessage.textContent = 'A jelszónak legalább 6 karakter hosszúnak kell lennie!';
+                errorMessage.style.display = 'block';
+                document.getElementById('loginForm').classList.add('shake');
+                setTimeout(() => {
+                    document.getElementById('loginForm').classList.remove('shake');
+                }, 500);
+                return;
+            }
+            
+            loginBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Feldolgozás...';
+            loginBtn.disabled = true;
+            
+            try {
+                // Szerver oldali hash-hez hasonló megoldás (csak demonstráció)
+               const salt = 'papirpelikan_secure_salt_2024';
+const saltedPassword = password + salt;
+const hashedPassword = await sha256Hash(saltedPassword);
+const { hash: finalHash } = await proofOfWork(hashedPassword, 2);
+
+                
+                // Ellenőrzés (valós alkalmazásban szerver oldalon történik)
+                // Itt csak szimuláljuk a hitelesítést
+                await new Promise(resolve => setTimeout(resolve, 1000));
+                
+                // Ellenőrzés (csak demonstráció)
+                const validUsername = 'Adi';'Mesi';
+                const validPasswordHash = '15e2b0d3c33891ebb0f1ef609ec419420c20e320ce94c65fbc8c3312448eb225'; // "pelikan2024" + salt
+                
+                if (username === 'Adi' && password === 'pelikan2024')
+                if (username === 'Mesi' && password === 'pelikan2024') {
+    // Sikeres bejelentkezés
+    errorMessage.style.display = 'none';
+    document.getElementById('loginScreen').style.display = 'none';
+    document.getElementById('adminDashboard').style.display = 'block';
+    document.getElementById('adminGreeting').textContent = `Üdvözöljük, ${username}!`;
+    sessionStorage.setItem('adminLoggedIn', 'true');
+} else {
+    // Hibás bejelentkezés
+    errorMessage.textContent = 'Hibás felhasználónév vagy jelszó!';
+    errorMessage.style.display = 'block';
+    document.getElementById('loginForm').classList.add('shake');
+    setTimeout(() => {
+        document.getElementById('loginForm').classList.remove('shake');
+    }, 500);
+}
+
+            } catch (error) {
+                console.error('Hiba a bejelentkezés során:', error);
+                errorMessage.textContent = 'Hiba történt a bejelentkezés során. Kérjük, próbálja újra.';
+                errorMessage.style.display = 'block';
+            } finally {
+                loginBtn.innerHTML = '<i class="fas fa-sign-in-alt"></i> Belépés';
+                loginBtn.disabled = false;
+            }
+        });
+        
+        // Kijelentkezés
+        document.getElementById('logoutBtn').addEventListener('click', function() {
+            sessionStorage.removeItem('adminLoggedIn');
+            document.getElementById('loginScreen').style.display = 'block';
+            document.getElementById('adminDashboard').style.display = 'none';
+            document.getElementById('username').value = '';
+            document.getElementById('password').value = '';
+            document.getElementById('passwordStrengthBar').style.width = '0%';
+        });
+        
+        // Oldal betöltésekor ellenőrizzük a bejelentkezési állapotot
+        window.addEventListener('DOMContentLoaded', function() {
+            if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                document.getElementById('loginScreen').style.display = 'none';
+                document.getElementById('adminDashboard').style.display = 'block';
+            }
+            
+            // Automatikus kijelentkezés inaktivitás esetén (30 perc)
+            setTimeout(function() {
+                if (sessionStorage.getItem('adminLoggedIn') === 'true') {
+                    sessionStorage.removeItem('adminLoggedIn');
+                    alert('Automatikus kijelentkezés történt inaktivitás miatt.');
+                    document.getElementById('loginScreen').style.display = 'block';
+                    document.getElementById('adminDashboard').style.display = 'none';
+                }
+            }, 30 * 60 * 1000);
+        });
+
+        // Egyszerű brute-force védelem (késleltetés ismétlődő próbálkozások esetén)
+        let failedAttempts = 0;
+        const originalSubmit = document.getElementById('loginForm').onsubmit;
+        
+        document.getElementById('loginForm').onsubmit = async function(e) {
+            if (failedAttempts >= 3) {
+                e.preventDefault();
+                const delay = Math.min(5000, failedAttempts * 1000);
+                document.getElementById('errorMessage').textContent = `Túl sok sikertelen próbálkozás. Kérjük, várjon ${delay/1000} másodpercet.`;
+                document.getElementById('errorMessage').style.display = 'block';
+                
+                await new Promise(resolve => setTimeout(resolve, delay));
+                failedAttempts = 0;
+                return false;
+            }
+            
+            const result = await originalSubmit(e);
+            if (document.getElementById('errorMessage').style.display === 'block') {
+                failedAttempts++;
+            }
+            return result;
+        };
+    </script>
+</body>
+</html>
