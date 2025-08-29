@@ -1,0 +1,369 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  align-items: flex-end;
+  gap: 30px;
+  max-width: 500px;
+  width: 100%;
+}
+
+.card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 3px solid #000;
+  border-radius: 15px;
+  padding: 10px;
+  width: 100%;
+  background: #fdf7eb;
+  flex-direction: column;
+  gap: 15px;
+  box-shadow: 0 10px 25px rgba(90, 57, 33, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.card::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-size: cover;
+  background-position: center;
+  
+  z-index: 0;
+}.card.watermelon::before {
+  background-image: url("/watermelon.png");
+  background-size: cover;        /* <--- Ez a kulcs */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card.espresso::before {
+  background-image: url("/beans.png");
+  background-size: cover;        /* <--- Ez a kulcs */
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+
+.card.summertime::before {
+  background-image: url("/palmtrees.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card.nyarvan::before {
+  background-image: url("/beach.png");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+.card.alomhajo::before {
+  background-image: url("/alomhajo.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.card.al
+.top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  gap: 8px;
+  position: relative;
+  z-index: 1;
+}
+
+.left {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  position: relative;
+  z-index: 1;
+}
+
+.controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  position: relative;
+  z-index: 1;
+}
+
+.play-btn {
+  width: 0; 
+  height: 0; 
+  border-left: 22px solid #000;
+  border-top: 14px solid transparent;
+  border-bottom: 14px solid transparent;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.play-btn:hover {
+  transform: scale(1.4);
+}
+
+.pause-btn {
+  width: 20px;
+  height: 28px;
+  background: repeating-linear-gradient(
+    to right,
+    #000,
+    #000 7px,
+    transparent 7px,
+    transparent 12px
+  );
+  cursor: pointer;
+  transition: all 0.2s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.pause-btn:hover {
+  transform: scale(1.4);
+}
+
+.title {
+  font-size: 20px;
+  font-weight: 700;
+  color: #000;
+  position: relative;
+  z-index: 1;
+}
+
+.time {
+  border: 2px solid #000;
+  border-radius: 8px;
+  font-size: 18px;
+  font-weight: 700;
+  color: #000;
+  background: #f7f2e9;
+  min-width: 100px;
+  text-align: center;
+  margin-left: 12px;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-container {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  gap: 10px;
+  margin-top: -15px;
+  position: relative;
+  z-index: 1;
+}
+
+.progress-wrapper {
+  flex: 1;
+  position: relative;
+  z-index: 1;
+}
+
+.progress {
+  width: 100%;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: #fdf7eb;
+  border: 2px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  position: relative;
+  z-index: 1;
+}
+
+.volume-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  width: 40px;
+  transition: width 0.3s ease;
+  overflow: hidden;
+  position: relative;
+  z-index: 1;
+}
+
+.volume-container:hover {
+  width: 120px;
+}
+
+.volume-icon {
+  font-size: 18px;
+  color: #000;
+  cursor: pointer;
+  flex-shrink: 0;
+  position: relative;
+  z-index: 1;
+}
+
+.volume {
+  width: 0;
+  -webkit-appearance: none;
+  appearance: none;
+  height: 5px;
+  background: #fdf7eb;
+  border: 2px solid #000;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: width 0.3s ease;
+  position: relative;
+  z-index: 1;
+}
+
+.volume-container:hover .volume {
+  width: 80px;
+}
+
+.progress::-webkit-slider-thumb,
+.volume::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 14px;
+  height: 14px;
+  background: #000;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.volume::-webkit-slider-thumb {
+  width: 14px;
+  height: 14px;
+}
+
+.progress::-webkit-slider-thumb:hover,
+.volume::-webkit-slider-thumb:hover {
+  transform: scale(1.0);
+  background: #000;
+}
+
+.card.espresso {
+  background-image: url("/beans.png");
+  border-color: #2c1a15;
+}
+
+.card.espresso::before {
+  background-image: url("/espresso.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.card.espresso .title,
+.card.espresso .time,
+.card.espresso .volume-icon {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card.espresso .time {
+  color: #fff;
+}
+
+.card.espresso .play-btn,
+.card.espresso .pause-btn {
+  filter: brightness(1.8);
+}
+
+
+
+
+
+
+.card.summertime {
+  background: #3a241d;
+  border-color: #2c1a15;
+}
+
+.card.summertime::before {
+  background-image: url("/palmtrees.jpg");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  opacity: 0.3;
+}
+
+.card.summertime .title,
+.card.summertime .time,
+.card.summertime .volume-icon {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card.summertime .time {
+  border-color: #442e25;
+  color: #fff;
+}
+
+.card.summertime .play-btn,
+.card.summertime .pause-btn {
+  filter: brightness(1.8);
+  
+}
+
+
+
+
+
+.card.alomhajo {
+  background-image: url("/alomhajo.jpg");
+  border-color: #2c1a15;
+}
+
+
+.card.alomhajo .title,
+.card.alomhajo .time,
+.card.espresso .volume-icon {
+  color: #fff !important;
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+}
+
+.card.alomhajo .time {
+  color: #fff;
+}
+
+.card.alomhajo .play-btn,
+.card.alomhajo .pause-btn {
+  filter: brightness(1.8);
+}
+
+
+.card.espresso .play-btn,
+.card.summertime .play-btn,
+.card.alomhajo .play-btn {
+  border-left-color: #fff; /* Feher háromszög */
+  filter: none; /* Ha volt filter, most már nem kell */
+}
+
+.card.espresso .pause-btn,
+.card.summertime .pause-btn,
+.card.alomhajo .pause-btn {
+  background: repeating-linear-gradient(
+    to right,
+    #fff,
+    #fff 7px,
+    transparent 7px,
+    transparent 12px
+  );
+  filter: none;
+}
+
+
+.music-wrapper {
+  display: flex;
+  justify-content: flex-end; /* jobbra igazítja a tartalmat */
+  width: 100%;
+}

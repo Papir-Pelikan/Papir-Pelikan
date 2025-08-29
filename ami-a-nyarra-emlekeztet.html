@@ -1,0 +1,1047 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Papír-Pelikán</title>
+    <link rel="icon" type="image/x-icon" href="/papirpelikan_hatternelkul.png">
+<link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../../article1.css">
+<link rel="stylesheet" href="../../index.css">
+<link rel="stylesheet" href="playsong.css">
+<link rel="stylesheet" href="playlist.css">
+<link rel="stylesheet" href="playlist2.css">
+
+</head>
+<body>
+
+<header>
+    <div id="datum-napnev">
+    <div id="datum"></div>
+    <div id="nevnap"></div>
+    <div id="clock"></div>
+</div>
+    
+<div class="site-logo">
+<a href="/index.html">
+    <img src="/papirpelikanlogo.svg" alt="Papír-Pelikán logó">
+</a>    </div>
+    
+    <div class="idojaras">
+    <div class="main-weather" id="weather-toggle">
+        <div class="temp-display">
+            <img src="/thermometer.svg" alt="Hőmérséklet">
+            <span class="delutan">30°C</span>
+        </div>
+        <span class="toggle-icon">▼</span>
+    </div>
+    
+    <!-- Lenyíló rész (alapból rejtve) -->
+    <div class="weather-details">
+        <div class="sunrise-info">
+            <img src="/napkelte.png" alt="Napkelte">
+            <span class="napkelte">5:10</span>
+        </div>
+        <div class="sunset-info">
+            <img src="/napnyugta.svg" alt="Napnyugta">
+            <span class="napnyugta">21:00</span>
+        </div>
+    </div>
+</div>
+</header>
+
+<div class="nav-container">
+<nav>
+  <!-- Bal oldali elemek (keresés + szűrés) -->
+  <div class="nav-left">
+    <div class="nav-item search-container">
+      <div class="search-wrapper">
+        <svg class="search-icon" viewBox="0 0 24 24" width="18" height="18">
+          <path fill="currentColor" d="M15.5 14h-.79l-.28-.27a6.5 6.5 0 0 0 1.48-5.34c-.47-2.78-2.79-5-5.59-5.34a6.505 6.505 0 0 0-7.27 7.27c.34 2.8 2.56 5.12 5.34 5.59a6.5 6.5 0 0 0 5.34-1.48l.27.28v.79l4.25 4.25c.41.41 1.08.41 1.49 0 .41-.41.41-1.08 0-1.49L15.5 14zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/>
+        </svg>
+        <input type="text" placeholder="Keresés..." class="search-bar">
+      </div>
+    </div>
+  </div>
+  
+  <!-- Jobb oldali menüpontok -->
+<div class="nav-right">
+    <div class="nav-item dropdown">
+        <a href="bemutatkozunk.html#szerkesztoseg" class="iroink">Íróink</a>
+        <div class="dropdown-menu">
+            <a href="bemutatkozunk.html#emese">Tóth Emese</a>
+            <a href="bemutatkozunk.html#panni">Bánóczi Anna</a>
+            <a href="bemutatkozunk.html#adi">Czeglédi Ádám</a>
+            <a href="bemutatkozunk.html#nati">Kéki Natália</a>
+            <a href="bemutatkozunk.html#akos">Milyán Ákos</a>
+            <a href="bemutatkozunk.html#eszter">Milyán Eszter</a>
+            <a href="bemutatkozunk.html#juli">Monok Julianna</a>
+            <a href="bemutatkozunk.html#laura">Szekrényes Laura</a>
+            <a href="bemutatkozunk.html#nora">Szekrényes Nóra</a>
+        </div>
+    </div> 
+    <div class="nav-item dropdown">
+        <a href="lapszamaink.html" class="iroink">Lapszámaink</a>
+        <div class="dropdown-menu">
+            <a href="lapszamaink.html?szam=1">I. szám</a>
+            <a href="lapszamaink.html?szam=2">II. szám</a>
+            <a href="lapszamaink.html?szam=3">III. szám</a>
+            <a href="lapszamaink.html?szam=4">IV. szám</a>
+        </div>
+    </div>     
+    <div class="nav-item dropdown">
+        <a href="rovataink.html" class="iroink">Rovataink</a>
+        <div class="dropdown-menu">
+            <a href="rovataink.html#hitelet">Hitélet</a>
+            <a href="rovataink.html#tudomany">Tudomány</a>
+            <a href="rovataink.html#kultura">Kultúra</a>
+            <a href="rovataink.html#tarsadalom">Társadalom</a>
+            <a href="rovataink.html#muveszet">Művészet</a>
+        </div>
+    </div>
+            <div class="nav-item dropdown">
+        <a href="lapszamaink.html" class="iroink">Elérhetőségeink</a>
+        <div class="dropdown-menu">
+            <a href="https://mail.google.com/mail/u/0/#inbox?compose=GTvVlcSGLQBqkQGWBNznwnbflkmbDGKknNmnqKVcWLJKCrjCRTWRGGzBBqqGDLSzbdGMfPCBbxsvf" target="_blank">G-mail</a>
+            <a href="https://www.instagram.com/papir.pelikan/" target="_blank"">Instagram</a>
+            <a href="https://www.facebook.com/profile.php?id=61579389116350" target="_blank"">Facebook</a>
+            <a href="https://www.grl.hu" target="_blank">grl.hu</a>        </div>
+    </div> 
+</div>
+</nav>
+
+<main style="max-width: 1000px; margin: auto; padding: 20px;">
+    <h1>Ami a nyárra emlékeztet..</h1>
+    
+    <div style="display: flex; background: #5D729C; color: white; padding: 15px; font-weight: bold; justify-content: center; align-items: center;">
+<a href="/Rovatok/Rovatok-oldal/ajanlo-cikkeink.html" style="padding: 0 8px; display: flex; align-items: center;">
+    <img src="/Rovatok/Rovatok-ikon/ajanloink.svg" alt="Szezonális ajánló" style="height: 2.2em; vertical-align: middle;">
+  </a> 
+  
+<a class="meta-link-konyvajanlok tooltip">
+  <div class="meta-link-konyvajanlok">
+  I. szám
+  </div>
+  <span class="tooltip-text">Megjelenés: 2025. szeptember</span>
+</a>
+
+<a href="/ellenorzott.html" style="padding: 0 8px; display: flex; align-items: center;">
+    <img src="/Rovatok/Rovatok-ikon/ellenorzott.svg" alt="" style="height: 0.9em; vertical-align: middle;">
+</a>
+  
+  <a class="meta-link-szezonalis" href="/Irok/toth-emese.html" style="padding: 0 8px;  color: white; text-decoration: none;">
+    <h2>Tóth Emese</h2>
+  </a>
+  <p>;</p>
+  <a  style="padding: 0 8px;  color: white; text-decoration: none;">
+  <h2>Tóth Anna<h2></h2> </a>
+</div>
+
+
+
+  <div class="szezonalis-hatter"> 
+A szezonális ajánlók az adott évszak vagy ünnep hangulatára emlékeztető ajánlók. A legelső számba a nyári érzéshez passzoló ajánlót hozunk, hogy még így szeptember elején emlékezzünk vissza rá, merítsünk belőle erőt és kezdjük energikusan az új tanévet!
+  </div>
+  <div class="cimek-ajanlok">
+    <h2>Mamma Mia!</h2>
+    </div>
+<div class="konyvajanlok">
+<p style="margin-bottom: 0.5em;"><strong>Cím:</strong> Mamma Mia!</p>
+<p style="margin-bottom: 0.5em;"><strong>Megjelenés éve:</strong>2008</p>
+<p style="margin-bottom: 0.5em;"><strong>Hossz:</strong>105 perc</p>
+
+<div class="cimek-ajanlok">
+    <h3>Tartalom</h3>
+    </div>
+
+    <div class="iskolank-elete p">
+<p>
+	A húszéves Sophie <i>(Amanda Seyfried)</i> édesanyjával, Donnával <i>(Meryl Streep)</i> él együtt egy kis görög szigeten, ahol Donna a Villa Donna szállót vezeti. Sophie váratlanul hozzámegy vőlegényéhez, Skyhoz <i>(Dominic Cooper)</i>, és szeretné, ha édesapja vezetné az oltárhoz, azt azonban nem tudja, hogy igazából ki is ő. Donna régi naplóját elolvasva a lány arra a következtetésre jut, hogy három férfi közül lehet valamelyik az apja. Meghívja Samet <i>(Pierce Brosnan)</i>, Harryt <i>(Colin Firth)</i> és Billt <i>(Stellan Skarsgård)</i> az esküvőre anélkül, hogy anyjának erről szólna és megpróbálja kideríteni, ki az igazi apja.</p>
+</div>
+<div class="cimek-ajanlok">
+    <h3>Miért ajánlom?</3>
+    </div>
+    <div class="iskolank-elete p">
+<p>Azért, mert már az első percekben, érzed a napsütést az arcodon. Egyértelműen az egyik legjobb nyári film, maga a látvány és a zene is egyből a nyárra emlékeztet. Nem mellesleg a történet is nagyon izgalmas és szórakoztató.</p>
+    </div>
+  </div>
+
+  <div class="hr-container">
+  <hr class="dotted">
+</div>
+
+  <div class="cimek-ajanlok">
+    <h2>A nyár, amikor megszépültem</h2>
+    </div>
+<div class="iskolank-elete p">
+  <p style="margin-bottom: 0.5em;"><strong>Cím:</strong>The summer I turned pretty</p>
+<p style="margin-bottom: 0.5em;"><strong>Megjelenés éve:</strong>2021</p>
+<p style="margin-bottom: 0.5em;"><strong>Évadok:</strong>3 évad (a 3. évad 2025-re várható)</p>
+<p style="margin-bottom: 0.5em;"><strong>Részek:</strong>26</p>
+
+</div>  
+<div class="cimek-ajanlok">
+    <h3>Tartalom</h3>
+    </div>
+    <div class="iskolank-elete p">
+<p>A nyár, amikor megszépültem egy romantikus dráma sorozat, amely Belly <i>(Lola Tung)</i>, egy tizenhat éves lány történetét meséli el. A történet minden nyáron ugyanazon a tengerparti házban játszódik, ahol Belly és családja barátaikkal töltik a szünidőt. Ez a nyár azonban más, mint a korábbiak: Belly már nem kislány többé, és ezt a fiúk is észreveszik – különösen két gyerekkori barátja, Conrad <i>(Christopher Britney)</i> és Jeremiah <i>(Gavin Casalegno)</i>. A szerelmi háromszög, a családi titkok és a felnőtté válás nehézségei összefonódnak ebben az érzelmes, nosztalgikus hangulatú sorozatban, amely a nyár varázsát és az első szerelem fájdalmát idézi meg.</p>
+
+<div class="cimek-ajanlok">
+    <h3>Miért ajánlom?</3>
+    </div>
+<p>Az izgalmas történet, a perzselő romantika és a tökéletes színészek szép alakítása miatt. Egy történet, ami már az első perceknél be ránt a nyárba. Egy olyan nyárba, ahol senki sem késztet megállásra abban, hogy igazán élvezd a nyarat.</p>
+<div class="hr-container">
+  <hr class="dotted">
+</div>
+
+<div class="cimek-aja">
+
+    <h3>Twinkling Watermelon</h3>
+    </div>
+
+<div class="konyvajanlok">
+<p style="margin-bottom: 0.5em;"><strong>Cím:</strong>Twinkling Watermelon</p>
+<p style="margin-bottom: 0.5em;"><strong>Megjelenés éve:</strong>2023</p>
+<p style="margin-bottom: 0.5em;"><strong>Részek:</strong>16</p>
+</div>
+<div class="cimek-ajanlok">
+    <h3>Tartalom</h3>
+    </div>
+<p>A Twinkling Watermelon a zenét és az időt állítja a középpontba, amelyben egy süket szülők mellett felnőtt egészséges fiú, Ha Eun-gyeol <i>(Ryeoun)</i> történetét meséli el. Eun-gyeol nappal példás diák, éjjelente azonban titokban zenész. Egy nap rejtélyes módon visszakerül az 1990-es évekbe, ahol fiatalként találkozik saját édesapjával, Ha Yi-chan-nal <i>(Choi Hyun-wook)</i>, aki akkor még heves és álmodozó fiatal fiú volt. Emellett megismeri Yoon Chung-ah-t <i>(Shin Eun-soo)</i>, a fiatal édesanyját, és egy különleges lányt, Choi Se-kyung-ot <i>(Seol In-ah)</i> is. A múltban Eun-gyeol egy iskolai zenekart alapít, miközben megpróbálja megérteni és formálni a szülei jövőjét – anélkül, hogy veszélyeztetné a saját létét.</p>
+
+<div class="cimek-ajanlok">
+    <h3>Kedvenc szereplőim</3>
+    </div>
+<p>Ha Eun-gyeol és Ha Yi Chan</p>
+
+<div class="cimek-ajanlok">
+    <h3>Miért ajánlom?</3>
+    </div>
+<p> Leginkább a zenei alapja miatt és, mert egy kis fantasy is megjelenik a történetben. Nagyon izgalmas és ez az egyik olyan sorozat, amit képtelen voltam abbahagyni. Mindegyik rész nagyon érdekesnek bizonyult.</p>
+<div class="hr-container">
+  <hr class="dotted">
+</div>
+    
+<div class="cimek-ajanlok">
+
+    <h3>Haikyuu!</h3>
+    </div>
+    </div>
+
+
+<div class="konyvajanlok">
+<p style="margin-bottom: 0.5em;"><strong>Cím:</strong> Haikyuu!</p>
+<p style="margin-bottom: 0.5em;"><strong>Megjelenés éve:</strong> 2014-2020
+<p style="margin-bottom: 0.5em;"><strong>Évadok:</strong> 3</p>
+<p style="margin-bottom: 0.5em;"><strong>Részek:</strong> 85+5 kiegészítő</p>
+</div>
+<div class="cimek-ajanlok">
+    <h3>Tartalom</h3>
+    </div>
+        <div class="iskolank-elete p">
+<p>A Haikyuu! anime Kyōhei Miyajima mangáján alapul. Hinata Shouyou, egy alacsony középiskolás diák, hirtelen szeret bele a röplabdába, miután látott egy országos bajnokságot a tévében. Eltökélte, hogy olyan lesz, mint a bajnokság sztárjátékosa: egy alacsony fiú, akit "kis óriásnak" becéztek, ezért Shouyou csatlakozott az iskola röplabdaklubjához. Az első fordulóban a bajnokság legjobbjával kellett szembenéznie. Bár Shouyou csapata elsöprő vereséget szenvedett, megfogadta, hogy jobb lesz, és végül legyőzi Kageyamát. Ám az első röplabda edzés alkalmával rá kell jönni, hogy ez nem fog menni, ha a fiú a csapattársa, már pedig az. A röplabdacsapatnak mindenképpen szüksége van a képességeikre, de csak akkor, ha abbahagyják a veszekedést, és megtanulnak csapattársakként együttműködni.
+</p>        </div>
+
+<div class="cimek-ajanlok">
+    <h3>Miért ajánlom?</3>
+    </div>
+            <div class="iskolank-elete p">
+
+<p>Azért, mert nagyon izgalmasan mutatja be ezt a sportágat, elképesztő a grafikája. Nagyon könnyű megszeretni és egyszerűen beszívja az embert. Bár nem teljesen nyári témájú, mert sokkal több időt ölel fel az egész sorozat, de a nyári részek olyan szépen visszatükrözik a japán nyár hangulatát, hogy nehezen tudok más animére gondolni, ha a nyári animét keresek.</p>
+
+            </div>
+<div class="hr-container">
+  <hr class="dotted">
+</div>
+ <div class="cimek-ajanlok">
+
+    <h2>Csíííz!</h2>
+    </div>
+
+
+<div class="konyvajanlok">
+<p style="margin-bottom: 0.5em;"><strong>Cím:</strong> Csíííz!</p>
+<p slot="margin-bottom: 0.5em;"><strong>Író:</strong> Bakó Liza</p>
+<p style="margin-bottom: 0.5em;"><strong>Megjelenés éve:</strong> 2023</p>
+<p style="margin-bottom: 0.5em;"><strong>Oldalak száma:</strong> 417</p>
+</div>
+<div class="cimek-ajanlok">
+    <h3>Tartalom</h3>
+    </div>
+        <div class="iskolank-elete p">
+
+<p>Hanna nehéz időszakon megy keresztül. Az első gimis éve korántsem úgy alakult, ahogy szerette volna, ráadásul a szülei úgy döntöttek, hogy a család leköltözik Siófokra és ott kezdenek új életet.
+Még szerencse, hogy az új gimnázium nyári fotós tábort indít, hiszen Hanna imád fényképezni. De vajon milyenek lesznek az új iskolatársai, sikerül barátokat szereznie? És mi van a szerelemmel?
+Hannának ezen a nyáron mindenből bőven kijut, és – ahogy az lenni szokott, ha az ember gimis –, semmi sem megy olyan könnyen, mint ahogy azt elképzeljük.
+Balaton, szerelem, barátság, nyár. Nem is kell más a boldogsághoz. Vagy nem is ilyen egyszerű?</p>
+        </div>
+<div class="cimek-ajanlok">
+    <h3>Miért ajánlom?</3>
+    </div>
+                <div class="iskolank-elete p">
+
+<p>Azért, mert tökéletes visszaadja a balatoni nyári hangulatot, mert jó humora van a szerzőnek és, mert izgalmasan mutatja be, hogy miként lehet beilleszkedni egy új társaságba, vagy egy régi kapcsolatot helyreállítani.</p>
+                </div>
+<div class="hr-container">
+  <hr class="dotted">
+</div>
+ <div class="cimek-ajanlok">
+
+    <h2>Zeneajánló</h2>
+    </div>
+
+
+
+
+                    
+<div class="container">
+    
+<!-- Espresso -->
+<div class="container">
+    <div class="card espresso">
+        <div class="top">
+            <div class="left">
+                <div class="controls">
+                    <div class="play-btn" id="play-espresso"></div>
+                </div>
+                <div class="title">Sabrina Carpenter - Espresso</div>
+            </div>
+            <div class="time" id="duration-espresso">0:00 / 2:56</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-wrapper">
+                <input type="range" class="progress" id="progress-espresso" value="0" min="0" max="100">
+            </div>
+            <div class="volume-container">
+                <div class="volume-icon">🔈</div>
+                <input type="range" class="volume" id="volume-espresso" value="80" min="0" max="100">
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="audioPlayer-espresso">
+    <source src="/espresso.mp3" type="audio/mpeg">
+    A böngészője nem támogatja az audio elemet.
+</audio>
+
+<!-- Summertime Sadness -->
+<div class="container">
+    <div class="card summertime">
+        <div class="top">
+            <div class="left">
+                <div class="controls">
+                    <div class="play-btn" id="play-summertime"></div>
+                </div>
+                <div class="title">Lana Del Rey - Summertime Sadness</div>
+            </div>
+            <div class="time" id="duration-summertime">0:00 / 4:25</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-wrapper">
+                <input type="range" class="progress" id="progress-summertime" value="0" min="0" max="100">
+            </div>
+            <div class="volume-container">
+                <div class="volume-icon">🔈</div>
+                <input type="range" class="volume" id="volume-summertime" value="80" min="0" max="100">
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="audioPlayer-summertime">
+    <source src="/summertimesadness.mp3" type="audio/mpeg">
+    A böngészője nem támogatja az audio elemet.
+</audio>
+
+<!-- Watermelon Sugar -->
+<div class="container">
+    <div class="card watermelon">
+        <div class="top">
+            <div class="left">
+                <div class="controls">
+                    <div class="play-btn" id="play-watermelon"></div>
+                </div>
+                <div class="title">Harry Styles - Watermelon Sugar</div>
+            </div>
+            <div class="time" id="duration-watermelon">0:00 / 2:54</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-wrapper">
+                <input type="range" class="progress" id="progress-watermelon" value="0" min="0" max="100">
+            </div>
+            <div class="volume-container">
+                <div class="volume-icon">🔈</div>
+                <input type="range" class="volume" id="volume-watermelon" value="80" min="0" max="100">
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="audioPlayer-watermelon">
+    <source src="/watermelonsugar.mp3" type="audio/mpeg">
+    A böngészője nem támogatja az audio elemet.
+</audio>
+
+<!-- Nyár van -->
+<div class="container">
+    <div class="card nyarvan">
+        <div class="top">
+            <div class="left">
+                <div class="controls">
+                    <div class="play-btn" id="play-nyarvan"></div>
+                </div>
+                <div class="title">Neoton Família - Nyár van</div>
+            </div>
+            <div class="time" id="duration-nyarvan">0:00 / 3:15</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-wrapper">
+                <input type="range" class="progress" id="progress-nyarvan" value="0" min="0" max="100">
+            </div>
+            <div class="volume-container">
+                <div class="volume-icon">🔈</div>
+                <input type="range" class="volume" id="volume-nyarvan" value="80" min="0" max="100">
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="audioPlayer-nyarvan">
+    <source src="/nyarvan.mp3" type="audio/mpeg">
+    A böngészője nem támogatja az audio elemet.
+</audio>
+
+<!-- Álomhajó -->
+<div class="container">
+    <div class="card alomhajo">
+        <div class="top">
+            <div class="left">
+                <div class="controls">
+                    <div class="play-btn" id="play-alomhajo"></div>
+                </div>
+                <div class="title">Carpe Diem - Álomhajó</div>
+            </div>
+            <div class="time" id="duration-alomhajo">0:00 / 3:42</div>
+        </div>
+        <div class="progress-container">
+            <div class="progress-wrapper">
+                <input type="range" class="progress" id="progress-alomhajo" value="0" min="0" max="100">
+            </div>
+            <div class="volume-container">
+                <div class="volume-icon">🔈</div>
+                <input type="range" class="volume" id="volume-alomhajo" value="80" min="0" max="100">
+            </div>
+        </div>
+    </div>
+</div>
+
+<audio id="audioPlayer-alomhajo">
+    <source src="/alomhajo.mp3" type="audio/mpeg">
+    A böngészője nem támogatja az audio elemet.
+</audio>
+  </div>
+
+  <!-- MP3 lejátszó -->
+  <audio id="audioPlayer">
+    <source src="/espresso.mp3" type="audio/mpeg">
+    A böngészője nem támogatja az audio elemet.
+  </audio>
+
+
+
+  <!-- MP3 lejátszó -->
+  <audio id="audioPlayer">
+    <source src="/summertimesadness.mp3" type="audio/mpeg">
+    A böngészője nem támogatja az audio elemet.
+  </audio>
+
+<div class="cimek">
+
+
+    </main>
+
+<script src="index.js"></script>
+<script src="playlist.js"></script>
+<script src="playlist2.js"></script>
+
+
+<script>
+  // Magyar napok nevei
+  const napok = ["Vasárnap", "Hétfő", "Kedd", "Szerda", "Csütörtök", "Péntek", "Szombat"];
+
+  // Magyar hónapok nevei
+  const honapok = [
+    "január", "február", "március", "április", "május", "június",
+    "július", "augusztus", "szeptember", "október", "november", "december"
+  ];
+
+  // Egyszerű névnaptár – csak példa! (Kibővíthető vagy cserélhető API-ra)
+const nevnapok = {
+  "01.01": ["Fruzsina", "Bazil"],
+  "01.02": ["Ábel"],
+  "01.03": ["Genovéva", "Gyöngyvér"],
+  "01.04": ["Titusz", "Leona"],
+  "01.05": ["Simon"],
+  "01.06": ["Boldizsár"],
+  "01.07": ["Attila", "Ramóna"],
+  "01.08": ["Gyöngyvér"],
+  "01.09": ["Marcell"],
+  "01.10": ["Melánia"],
+  "01.11": ["Ágota"],
+  "01.12": ["Ernő"],
+  "01.13": ["Veronika"],
+  "01.14": ["Bódog"],
+  "01.15": ["Lóránt", "Loránd"],
+  "01.16": ["Gusztáv"],
+  "01.17": ["Antal", "Antónia"],
+  "01.18": ["Piroska"],
+  "01.19": ["Sámuel", "Szeverin"],
+  "01.20": ["Fábián", "Sebestyén"],
+  "01.21": ["Ágnes"],
+  "01.22": ["Vince"],
+  "01.23": ["Zelma", "Rajmund"],
+  "01.24": ["Timót"],
+  "01.25": ["Pál"],
+  "01.26": ["Vanda", "Paula"],
+  "01.27": ["Angéla", "Orsolya"],
+  "01.28": ["Károly", "Karola"],
+  "01.29": ["Adél"],
+  "01.30": ["Martina", "Gerda"],
+  "01.31": ["Marcella"],
+  "02.01": ["Ignác"],
+  "02.02": ["Karolina", "Aida"],
+  "02.03": ["Balázs"],
+  "02.04": ["Ráhel", "Csenge"],
+  "02.05": ["Ágota", "Ingrid"],
+  "02.06": ["Dorottya", "Dóra"],
+  "02.07": ["Tódor", "Rikarda"],
+  "02.08": ["Aranka"],
+  "02.09": ["Abigél", "Alexia"],
+  "02.10": ["Elvira"],
+  "02.11": ["Bertold", "Marietta"],
+  "02.12": ["Lívia", "Lídia"],
+  "02.13": ["Ella", "Linda"],
+  "02.14": ["Bálint"],
+  "02.15": ["Kolos", "Georgina"],
+  "02.16": ["Julianna", "Lilla"],
+  "02.17": ["Donát"],
+  "02.18": ["Bernadett"],
+  "02.19": ["Zsuzsanna"],
+  "02.20": ["Aladár", "Álmos"],
+  "02.21": ["Eleonóra"],
+  "02.22": ["Gerzson"],
+  "02.23": ["Alfréd"],
+  "02.24": ["Mátyás"],
+  "02.25": ["Géza"],
+  "02.26": ["Edina"],
+  "02.27": ["Ákos", "Bátor"],
+  "02.28": ["Elemér"],
+  "02.29": ["(Szökőév)"],
+  "03.01": ["Albin"],
+  "03.02": ["Lujza"],
+  "03.03": ["Kornélia"],
+  "03.04": ["Kázmér"],
+  "03.05": ["Adorján", "Adrián"],
+  "03.06": ["Leonóra", "Ines"],
+  "03.07": ["Tamás"],
+  "03.08": ["János", "Zoltán"],
+  "03.09": ["Franciska", "Fanny"],
+  "03.10": ["Ildikó"],
+  "03.11": ["Szilárd", "Kristóf"],
+  "03.12": ["Gergely"],
+  "03.13": ["Krisztián", "Ajtony"],
+  "03.14": ["Matild"],
+  "03.15": ["Kristóf"],
+  "03.16": ["Henrietta"],
+  "03.17": ["Gertrúd", "Patrik"],
+  "03.18": ["Sándor", "Ede"],
+  "03.19": ["József"],
+  "03.20": ["Klaudia"],
+  "03.21": ["Benedek"],
+  "03.22": ["Beáta", "Izolda"],
+  "03.23": ["Emil"],
+  "03.24": ["Gábor", "Karola"],
+  "03.25": ["Irén", "Írisz"],
+  "03.26": ["Emánuel"],
+  "03.27": ["Hajnalka"],
+  "03.28": ["Gedeon", "Johanna"],
+  "03.29": ["Auguszta"],
+  "03.30": ["Zoltán"],
+  "03.31": ["Árpád"],
+  "04.01": ["Hugó"],
+  "04.02": ["Áron"],
+  "04.03": ["Buda", "Richárd"],
+  "04.04": ["Izidor"],
+  "04.05": ["Vince"],
+  "04.06": ["Vilmos", "Bán"],
+  "04.07": ["Herman"],
+  "04.08": ["Dénes"],
+  "04.09": ["Erhard"],
+  "04.10": ["Zsolt"],
+  "04.11": ["Leó", "Szaniszló"],
+  "04.12": ["Gyula", "Aldó"],
+  "04.13": ["Ida"],
+  "04.14": ["Tibor"],
+  "04.15": ["Anasztázia"],
+  "04.16": ["Csongor"],
+  "04.17": ["Rudolf"],
+  "04.18": ["Andrea"],
+  "04.19": ["Emma"],
+  "04.20": ["Tivadar"],
+  "04.21": ["Konrád"],
+  "04.22": ["Csilla", "Noémi"],
+  "04.23": ["Béla"],
+  "04.24": ["György"],
+  "04.25": ["Márk"],
+  "04.26": ["Ervin"],
+  "04.27": ["Zita"],
+  "04.28": ["Valéria"],
+  "04.29": ["Péter"],
+  "04.30": ["Katalin", "Kitti"],
+  "05.01": ["Fülöp", "Jakab"],
+  "05.02": ["Zsigmond"],
+  "05.03": ["Irma", "Tímea"],
+  "05.04": ["Mónika", "Flórián"],
+  "05.05": ["Györgyi"],
+  "05.06": ["Ivett", "Frida"],
+  "05.07": ["Gizella"],
+  "05.08": ["Mihály"],
+  "05.09": ["Gergely"],
+  "05.10": ["Ármin", "Pálma"],
+  "05.11": ["Ferenc"],
+  "05.12": ["Pongrác"],
+  "05.13": ["Szervác", "Imola"],
+  "05.14": ["Bonifác"],
+  "05.15": ["Zsófia", "Szonja"],
+  "05.16": ["Mózes"],
+  "05.17": ["Paszkál"],
+  "05.18": ["Alexandra", "Erik"],
+  "05.19": ["Ivó", "Milán"],
+  "05.20": ["Bernát", "Felícia"],
+  "05.21": ["Konstantin"],
+  "05.22": ["Júlia", "Rita"],
+  "05.23": ["Dezső"],
+  "05.24": ["Eszter", "Eliza"],
+  "05.25": ["Orbán"],
+  "05.26": ["Fülöp"],
+  "05.27": ["Hella"],
+  "05.28": ["Emil", "Cintia"],
+  "05.29": ["Magdolna", "Leila"],
+  "05.30": ["Janka", "Zsanett"],
+  "05.31": ["Angéla"],
+  "06.01": ["Tünde"],
+  "06.02": ["Kármen", "Anita"],
+  "06.03": ["Klotild", "Cecília"],
+  "06.04": ["Bulcsú"],
+  "06.05": ["Fatima", "Fatime"],
+  "06.06": ["Norbert", "Norberta"],
+  "06.07": ["Róbert"],
+  "06.08": ["Medárd"],
+  "06.09": ["Félix"],
+  "06.10": ["Margit", "Gréta"],
+  "06.11": ["Barnabás"],
+  "06.12": ["Villő"],
+  "06.13": ["Antal", "Anilla"],
+  "06.14": ["Vazul"],
+  "06.15": ["Jolán", "Jóel"],
+  "06.16": ["Jusztin"],
+  "06.17": ["Laura", "Alida"],
+  "06.18": ["Arnold", "Levente"],
+  "06.19": ["Gyárfás"],
+  "06.20": ["Rafael"],
+  "06.21": ["Alajos", "Leila"],
+  "06.22": ["Paulina"],
+  "06.23": ["Zoltán"],
+  "06.24": ["János"],
+  "06.25": ["Vilmos", "Adelma"],
+  "06.26": ["János", "Pál"],
+  "06.27": ["László"],
+  "06.28": ["Levente", "Irén"],
+  "06.29": ["Péter", "Pál"],
+  "06.30": ["Pál"],
+  "07.01": ["Marián"],
+  "07.02": ["Ottó"],
+  "07.03": ["Kornél", "Soma"],
+  "07.04": ["Ulrik"],
+  "07.05": ["Emese", "Sarolta"],
+  "07.06": ["Csaba"],
+  "07.07": ["Apollónia"],
+  "07.08": ["Ellák"],
+  "07.09": ["Lukrécia"],
+  "07.10": ["Amália"],
+  "07.11": ["Nóra", "Lili"],
+  "07.12": ["Izabella", "Dalma"],
+  "07.13": ["Jenő"],
+  "07.14": ["Ödön"],
+  "07.15": ["Henrik", "Roland"],
+  "07.16": ["Valter"],
+  "07.17": ["Elek", "Endre"],
+  "07.18": ["Frigyes"],
+  "07.19": ["Emília"],
+  "07.20": ["Illés"],
+  "07.21": ["Dániel", "Daniella"],
+  "07.22": ["Magdolna"],
+  "07.23": ["Lenke"],
+  "07.24": ["Kincső", "Kinga"],
+  "07.25": ["Kristóf"],
+  "07.26": ["Anikó", "Anna"],
+  "07.27": ["Olga", "Szabolcs"],
+  "07.28": ["Szilárd"],
+  "07.29": ["Márta", "Flóra"],
+  "07.30": ["Judit", "Xénia"],
+  "07.31": ["Ignác"],
+  "08.01": ["Boglárka"],
+  "08.02": ["Lehel"],
+  "08.03": ["Hermina"],
+  "08.04": ["Domonkos", "Dominika"],
+  "08.05": ["Krisztina"],
+  "08.06": ["Berta", "Bogi"],
+  "08.07": ["Ibolya"],
+  "08.08": ["László"],
+  "08.09": ["Emőd"],
+  "08.10": ["Lőrinc"],
+  "08.11": ["Zsuzsanna"],
+  "08.12": ["Klára"],
+  "08.13": ["Ipoly", "Zsuzsanna"],
+  "08.14": ["Marcell"],
+  "08.15": ["Mária"],
+  "08.16": ["Ábrahám"],
+  "08.17": ["Jácint"],
+  "08.18": ["Ilona"],
+  "08.19": ["Huba"],
+  "08.20": ["István"],
+  "08.21": ["Sámuel"],
+  "08.22": ["Menyhért", "Mirjam"],
+  "08.23": ["Bence"],
+  "08.24": ["Bertalan"],
+  "08.25": ["Lajos", "Patrícia"],
+  "08.26": ["Izsó"],
+  "08.27": ["Gáspár"],
+  "08.28": ["Ágoston"],
+  "08.29": ["János"],
+  "08.30": ["Rózsa"],
+  "08.31": ["Erika", "Bella"],
+  "09.01": ["Egon"],
+  "09.02": ["Rebeka", "Dorina"],
+  "09.03": ["Hilda"],
+  "09.04": ["Rozália"],
+  "09.05": ["Viktor", "Lőrinc"],
+  "09.06": ["Zakariás"],
+  "09.07": ["Regina"],
+  "09.08": ["Mária", "Adrienn"],
+  "09.09": ["Ádám"],
+  "09.10": ["Nikolett", "Hunor"],
+  "09.11": ["Teodóra"],
+  "09.12": ["Mária", "Irma"],
+  "09.13": ["Kornél"],
+  "09.14": ["Szeréna"],
+  "09.15": ["Enikő", "Melitta"],
+  "09.16": ["Edit"],
+  "09.17": ["Zsigmond", "Ákos"],
+  "09.18": ["Orsolya", "József"],
+  "09.19": ["Vilhelmina"],
+  "09.20": ["Friderika"],
+  "09.21": ["Máté"],
+  "09.22": ["Mór"],
+  "09.23": ["Tekla", "Líviusz"],
+  "09.24": ["Mercédesz"],
+  "09.25": ["Eufémia"],
+  "09.26": ["Jusztina"],
+  "09.27": ["Adalbert"],
+  "09.28": ["Vencel"],
+  "09.29": ["Mihály"],
+  "09.30": ["Jeromos"],
+  "10.01": ["Malvin"],
+  "10.02": ["Petra"],
+  "10.03": ["Helga", "Alfréd"],
+  "10.04": ["Ferenc"],
+  "10.05": ["Aurél"],
+  "10.06": ["Brúnó", "Renáta"],
+  "10.07": ["Amália"],
+  "10.08": ["Koppány"],
+  "10.09": ["Dénes"],
+  "10.10": ["Gedeon", "Bence"],
+  "10.11": ["Brigitta"],
+  "10.12": ["Miksa"],
+  "10.13": ["Kálmán", "Ede"],
+  "10.14": ["Szabina"],
+  "10.15": ["Teréz"],
+  "10.16": ["Gál"],
+  "10.17": ["Hedvig"],
+  "10.18": ["Lukács"],
+  "10.19": ["Nándor"],
+  "10.20": ["Vendel"],
+  "10.21": ["Orsolya"],
+  "10.22": ["Előd", "Szabina"],
+  "10.23": ["Gyöngyi"],
+  "10.24": ["Salamon"],
+  "10.25": ["Blanka", "Dömötör"],
+  "10.26": ["Dömötör"],
+  "10.27": ["Szabina", "Ildikó"],
+  "10.28": ["Simon", "Szilárd"],
+  "10.29": ["Nárcisz"],
+  "10.30": ["Alfonz"],
+  "10.31": ["Farkas"],
+  "11.01": ["Marianna"],
+  "11.02": ["Achilles"],
+  "11.03": ["Győző"],
+  "11.04": ["Károly"],
+  "11.05": ["Imre"],
+  "11.06": ["Lénárd"],
+  "11.07": ["Rezső"],
+  "11.08": ["Zsombor"],
+  "11.09": ["Tivadar"],
+  "11.10": ["Tamás"],
+  "11.11": ["Márton"],
+  "11.12": ["Jónás", "Renátó"],
+  "11.13": ["Szilvia"],
+  "11.14": ["Aliz"],
+  "11.15": ["Albert", "Lipót"],
+  "11.16": ["Ödön"],
+  "11.17": ["Hortenzia", "Gergő"],
+  "11.18": ["Jenő"],
+  "11.19": ["Erzsébet"],
+  "11.20": ["Jolán"],
+  "11.21": ["Olivér"],
+  "11.22": ["Cecília"],
+  "11.23": ["Kelemen", "Klementina"],
+  "11.24": ["Emma"],
+  "11.25": ["Katalin"],
+  "11.26": ["Virág", "Márton"],
+  "11.27": ["Virgil"],
+  "11.28": ["Stefánia"],
+  "11.29": ["Taksony"],
+  "11.30": ["András", "Andrea"],
+  "12.01": ["Elza", "Eduárd"],
+  "12.02": ["Melinda", "Vivien"],
+  "12.03": ["Ferenc", "Olívia"],
+  "12.04": ["Borbála"],
+  "12.05": ["Vilma"],
+  "12.06": ["Miklós"],
+  "12.07": ["Ambrus"],
+  "12.08": ["Mária", "Vilma"],
+  "12.09": ["Natália"],
+  "12.10": ["Judit"],
+  "12.11": ["Árpád", "Árpád"],
+  "12.12": ["Gabriella"],
+  "12.13": ["Luca", "Ottília"],
+  "12.14": ["Szilárda"],
+  "12.15": ["Valér"],
+  "12.16": ["Etelka", "Aletta"],
+  "12.17": ["Lázár", "Olimpia"],
+  "12.18": ["Auguszta"],
+  "12.19": ["Viola"],
+  "12.20": ["Teofil"],
+  "12.21": ["Tamás"],
+  "12.22": ["Zénó"],
+  "12.23": ["Viktória"],
+  "12.24": ["Ádám", "Éva"],
+  "12.25": ["Eugénia"],
+  "12.26": ["István"],
+  "12.27": ["János"],
+  "12.28": ["Kamilla"],
+  "12.29": ["Tamás", "Tamás"],
+  "12.30": ["Dávid"],
+  "12.31": ["Szilveszter"]
+};
+
+  const today = new Date();
+  const nap = napok[today.getDay()];
+  const napSzam = today.getDate().toString().padStart(2, '0');
+  const honapSzam = (today.getMonth() + 1).toString().padStart(2, '0');
+  const ev = today.getFullYear();
+
+  const datumSzoveg = ${ev}.${honapSzam}.${napSzam} - ${nap};
+  const nevnapKulcs = ${honapSzam}.${napSzam};
+  const nevnapSzoveg = nevnapok[nevnapKulcs] ? nevnapok[nevnapKulcs].join(", ") : "Nincs adat";
+
+  document.getElementById("datum-napnev").innerText = ${datumSzoveg}\n${nevnapSzoveg};
+
+  const weatherToggle = document.getElementById('weather-toggle');
+  const weatherContainer = document.querySelector('.idojaras');
+
+  weatherToggle.addEventListener('click', () => {
+      weatherContainer.classList.toggle('open');
+  });
+document.addEventListener('DOMContentLoaded', function() {
+    const today = new Date();
+    const nap = napok[today.getDay()];
+    const napSzam = today.getDate().toString().padStart(2, '0');
+    const honapSzam = (today.getMonth() + 1).toString().padStart(2, '0');
+    const ev = today.getFullYear();
+
+    // Dátum formázása: YYYY.MM.DD - Napnév
+    const datumSzoveg = ${ev}.${honapSzam}.${napSzam} - ${nap};
+    
+    // Névnap keresése
+    const nevnapKulcs = ${honapSzam}.${napSzam};
+    const nevnapSzoveg = nevnapok[nevnapKulcs] ? nevnapok[nevnapKulcs].join(", ") : "Nincs adat";
+
+    // Kiírás a HTML-be
+    document.getElementById("datum").textContent = datumSzoveg;
+    document.getElementById("nevnap").textContent = nevnapSzoveg;
+
+    // Időjárás toggle
+    const weatherToggle = document.getElementById('weather-toggle');
+    const weatherContainer = document.querySelector('.idojaras');
+    
+    if (weatherToggle && weatherContainer) {
+        weatherToggle.addEventListener('click', function() {
+            weatherContainer.classList.toggle('open');
+        });
+    }
+});
+
+  // Napi ige választó
+const napiIgék = [
+    { szoveg: "„Ne félj és ne aggódj tehát, mert az Úr a te Istened veled lesz mindenütt, ahova csak mész.”", hely: "Józs 1:9" },
+    { szoveg: "„Isten pedig minden kegyelmet bőven megad néktek, hogy mindenben mindig minden elégségetek legyen, és bővelkedjetek minden jó cselekedetben.”", hely: "2Kor 9:8" },
+    { szoveg: "„Bízzál az Úrban teljes szívedből, és ne támaszkodj a magad értelmére.”", hely: "Péld 3:5" },
+    { szoveg: "„Minden fáradt és terhelt ember jöjjön hozzám, és én megnyugtatlak titeket.”", hely: "Máté 11:28" },
+    { szoveg: "„Az Úr közeli a megtört szívűekhez, és megmenti a megalázott lelket.”", hely: "Zsolt 34:19" },
+    { szoveg: "„Szeresd az Urat, a te Istenedet teljes szívedből, teljes lelkedből és teljes elmédből.”", hely: "Máté 22:37" },
+    { szoveg: "„Aki hisz bennem, az olyan lesz, mint a folyóvíz mellett ültetett fa, amely levele nem hervad, és minden idejében gyümölcsöt terem.”", hely: "Jer 17:8" },
+    { szoveg: "„Krisztus nélkül semmit sem tehettek.”", hely: "Jn 15:5" },
+    { szoveg: "„Mindenben hálásak legyetek, mert ez az Isten akarata irántatok Krisztus Jézusban.”", hely: "1Thessz 5:18" },
+    { szoveg: "„Az Úr a mi pásztorunk, semmi sem hiányzik nekünk.”", hely: "Zsolt 23:1" },
+    { szoveg: "„Én vagyok a világosság; aki követ engem, nem jár sötétségben, hanem élete világossága lesz.”", hely: "Jn 8:12" },
+    { szoveg: "„Az Isten szeretete önti el szívünket a Szentlélek által, aki nékünk adatott.”", hely: "Róm 5:5" },
+    { szoveg: "„Mert Isten nem ad nékünk félelem lelkét, hanem erőt, szeretetet és józan elme lelkét.”", hely: "2Tim 1:7" },
+    { szoveg: "„Békességet hagytam néktek, békességemet adom néktek; nem úgy adom, mint a világ adja.”", hely: "Jn 14:27" },
+    { szoveg: "„Az Úr jó és erős várakozója az ő kegyelmére.”", hely: "Zsolt 27:14" },
+    { szoveg: "„Áldott az, aki bízik az Úrban, és az Úr az ő bizodalma.”", hely: "Jer 17:7" },
+    { szoveg: "„Vegyétek magatokra az én igámat, és tanuljátok meg tőlem, hogy én szelíd és alázatos szívű vagyok.”", hely: "Máté 11:29" },
+    { szoveg: "„Az Isten hűséges, aki nem engedi, hogy a ti kísértetek meghaladja, amit elviselni tudtok.”", hely: "1Kor 10:13" },
+    { szoveg: "„A hit pedig a remélt dolgok bizonyossága, a nem látottakról való meggyőződés.”", hely: "Zsid 11:1" },
+    { szoveg: "„Minden Írás Isten ihletéséből van, és hasznos a tanításra.”", hely: "2Tim 3:16" },
+    { szoveg: "„Az Úr nem késik az ígérettel, mint néhányan késlekedésnek tartják.”", hely: "2Pét 3:9" },
+    { szoveg: "„Azért legyen mindenki készséges a hallásra, lassú a szóra, lassú a haragra.”", hely: "Jak 1:19" },
+    { szoveg: "„Az Isten szeretete önti el szívünket a Szentlélek által, aki nékünk adatott.”", hely: "Róm 5:5" },
+    { szoveg: "„Mert nálunk nincs megmaradó város, hanem a jövendőt keressük.”", hely: "Zsid 13:14" },
+    { szoveg: "„Az én erősségem és énekem az Úr, és ő lett nékem szabadulássá.”", hely: "Zsolt 118:14" },
+    { szoveg: "„Az Úr irgalmas és könyörülő, késedelmes a haragra és nagy kegyelmű.”", hely: "Zsolt 145:8" },
+    { szoveg: "„Az Úr gondot visel rólad, és megőriz téged minden bajtól.”", hely: "Zsolt 121:7" },
+    { szoveg: "„Az igaz embernek járása világos, mint a hajnali fény, amely egyre jobban ragyog, mígnem betelik a nappal.”", hely: "Péld 4:18" },
+    { szoveg: "„Az Úr a te őriződ, az Úr a te árnyékod a te jobb kezed felől.”", hely: "Zsolt 121:5" },
+    { szoveg: "„Az én segítségem az Úrtól van, aki teremtette az eget és a földet.”", hely: "Zsolt 121:2" },
+    { szoveg: "„Az Úr irgalmassága örökkévaló, az ő hűsége mindörökké megmarad.”", hely: "Zsolt 100:5" }
+];
+
+  function valasztNapiIget() {
+    const today = new Date();
+    const napIndex = today.getDate() % napiIgék.length;
+    const ige = napiIgék[napIndex];
+    
+    document.getElementById("napi-ige-szoveg").textContent = ${ige.szoveg} - ${ige.hely};
+  }
+
+  // Oldal betöltésekor frissítés 
+  valasztNapiIget();
+
+
+
+  document.addEventListener('DOMContentLoaded', function() {
+    const weatherToggle = document.getElementById('weather-toggle');
+    const weatherContainer = document.querySelector('.idojaras');
+    
+    if (weatherToggle && weatherContainer) {
+        weatherToggle.addEventListener('click', function() {
+            weatherContainer.classList.toggle('open');
+            console.log("Kattintás érzékelve!"); // Hibakereséshez
+        });
+    } else {
+        console.error("Nem található a weather-toggle vagy idojaras elem!");
+    }
+});
+});
+</script>
+<script>
+const API_KEY = "d5715a7dd1cfecb7ba81e6cabd0832e0"; // OpenWeatherMap API kulcs
+const CITY = "Budapest";
+const COUNTRY = "HU";
+
+function frissitIdojaras() {
+  fetch(https://api.openweathermap.org/data/2.5/weather?q=${CITY},${COUNTRY}&units=metric&lang=hu&appid=${API_KEY})
+    .then(res => res.json())
+    .then(data => {
+      // Napkelte és napnyugta konvertálás
+      const napkelte = new Date(data.sys.sunrise * 1000).toLocaleTimeString("hu-HU", {hour: "2-digit", minute:"2-digit"});
+      const napnyugta = new Date(data.sys.sunset * 1000).toLocaleTimeString("hu-HU", {hour: "2-digit", minute:"2-digit"});
+
+      // Hőmérséklet
+      const homerseklet = Math.round(data.main.temp);
+
+      // Szín beállítása a hőmérséklet alapján
+      const homersekletElem = document.querySelector(".delutan");
+      homersekletElem.textContent = homerseklet + "°C";
+      
+      // Szín beállítása
+      if (homerseklet > 30) {
+        homersekletElem.className = "delutan piros";
+      } else if (homerseklet >= 20) {
+        homersekletElem.className = "delutan zold";
+      } else {
+        homersekletElem.className = "delutan kek";
+      }
+
+      // Kiírás a HTML-be
+      document.querySelector(".napkelte").textContent = napkelte;
+      document.querySelector(".delutan").textContent = homerseklet + "°C";
+      document.querySelector(".napnyugta").textContent = napnyugta;
+    })
+    .catch(err => console.error("Hiba az időjárás lekérésnél:", err));
+}
+
+// Oldal betöltésekor frissítés
+frissitIdojaras();
+</script>
+<script>
+const elorejelzes = [
+  { nap: 13, hetnap: "Sz", max: 36, min: 17, megjegyzes: "" },
+  { nap: 14, hetnap: "Cs", max: 36, min: 19, megjegyzes: "" },
+  { nap: 15, hetnap: "P", max: 37, min: 20, megjegyzes: "" },
+  { nap: 16, hetnap: "Sz", max: 37, min: 21, megjegyzes: "" },
+  { nap: 17, hetnap: "V", max: 34, min: 24, megjegyzes: "" },
+  { nap: 18, hetnap: "H", max: 32, min: 24, megjegyzes: "" },
+  { nap: 19, hetnap: "K", max: 33, min: 23, megjegyzes: "" },
+  { nap: 20, hetnap: "Sz", max: 33, min: 23, megjegyzes: "jeles nap" },
+  { nap: 21, hetnap: "Cs", max: 34, min: 23, megjegyzes: "" },
+  { nap: 22, hetnap: "P", max: 33, min: 23, megjegyzes: "" },
+  { nap: 23, hetnap: "Sz", max: 31, min: 22, megjegyzes: "" },
+  { nap: 24, hetnap: "V", max: 28, min: 22, megjegyzes: "" },
+  { nap: 25, hetnap: "H", max: 27, min: 19, megjegyzes: "" },
+  { nap: 26, hetnap: "K", max: 27, min: 19, megjegyzes: "" },
+  { nap: 27, hetnap: "Sz", max: 28, min: 20, megjegyzes: "" },
+  { nap: 28, hetnap: "Cs", max: 32, min: 23, megjegyzes: "" },
+  { nap: 29, hetnap: "P", max: 29, min: 21, megjegyzes: "" },
+  { nap: 30, hetnap: "Sz", max: 30, min: 22, megjegyzes: "" },
+  { nap: 31, hetnap: "V", max: 26, min: 19, megjegyzes: "" },
+  { nap: 1, hetnap: "H", max: 26, min: 19, megjegyzes: "" },
+  { nap: 2, hetnap: "K", max: 30, min: 21, megjegyzes: "" },
+  { nap: 3, hetnap: "Sz", max: 26, min: 20, megjegyzes: "" },
+  { nap: 4, hetnap: "Cs", max: 29, min: 19, megjegyzes: "" },
+  { nap: 5, hetnap: "P", max: 30, min: 20, megjegyzes: "jeles nap" },
+  { nap: 6, hetnap: "Sz", max: 30, min: 20, megjegyzes: "" },
+  { nap: 7, hetnap: "V", max: 28, min: 22, megjegyzes: "jeles nap" },
+  { nap: 8, hetnap: "H", max: 28, min: 21, megjegyzes: "jeles nap" },
+  { nap: 9, hetnap: "K", max: 27, min: 19, megjegyzes: "" },
+  { nap: 10, hetnap: "Sz", max: 28, min: 17, megjegyzes: "" },
+  { nap: 11, hetnap: "Cs", max: null, min: null, megjegyzes: "" }
+];
+
+const ma = new Date();
+const napSzam = ma.getDate();
+const adat = elorejelzes.find(👎 => n.nap === napSzam);
+
+if (adat) {
+  document.querySelector(".nap").textContent = adat.nap + ".";
+  document.querySelector(".het").textContent = adat.hetnap;
+  document.querySelector(".max").textContent = adat.max ?? "--";
+  document.querySelector(".min").textContent = adat.min ?? "--";
+  document.querySelector(".megjegyzes").textContent = adat.megjegyzes;
+}
+</script>
+</body>
+
+</html>

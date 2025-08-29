@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="hu">
+<head>
+    <link href="https://fonts.googleapis.com/css2?family=Abril+Fatface&display=swap" rel="stylesheet">
+
+  <meta charset="UTF-8">
+  <style>
+    body {
+      background: linear-gradient(135deg, #fdf7eb 0%, #fdf7eb 100%); 
+      font-family: 'Abril Fatface';
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 30px;
+      max-width: 500px;
+      max-height:100px
+      width: 100%;
+    }
+
+    .card {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      border: 3px solid #000;
+      border-radius: 15px;
+      padding: 20px;
+      width: 100%;
+      background: #fdf7eb;
+      flex-direction: column;
+      gap: 15px;
+      box-shadow: 0 10px 25px rgba(90, 57, 33, 0.2);
+    }
+
+    .top {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 100%;
+    }
+
+    .left {
+      display: flex;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .controls {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .play-btn {
+      width: 0; 
+      height: 0; 
+      border-left: 22px solid #000;
+      border-top: 14px solid transparent;
+      border-bottom: 14px solid transparent;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .play-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .pause-btn {
+      width: 20px;
+      height: 28px;
+      background: repeating-linear-gradient(
+        to right,
+        #000,
+        #000 7px,
+        transparent 7px,
+        transparent 12px
+      );
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    .pause-btn:hover {
+      transform: scale(1.1);
+    }
+
+    .title {
+      font-size: 20px;
+      font-weight: 700;
+      color: #000;
+    }
+
+    .time {
+      border: 2px solid #000;
+      border-radius: 8px;
+      font-size: 18px;
+      font-weight: 700;
+      color: #000;
+      background: #f7f2e9;
+      min-width: 140px;
+      text-align: center;
+    }
+
+
+  .progress-container {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    gap: 15px;
+    margin-top: 10px;
+  }
+
+  .progress-wrapper {
+    flex: 1;
+    position: relative;
+  }
+
+  .progress {
+    width: 100%;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 10px;
+    background: #eee;
+    border: 2px solid #5a3921;
+    border-radius: 10px;
+    cursor: pointer;
+  }
+
+  .volume-container {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    width: 40px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+  }
+
+  .volume-container:hover {
+    width: 120px;
+  }
+
+  .volume-icon {
+    font-size: 18px;
+    color: #5a3921;
+    cursor: pointer;
+    flex-shrink: 0;
+  }
+
+  .volume {
+    width: 0;
+    -webkit-appearance: none;
+    appearance: none;
+    height: 6px;
+    background: #eee;
+    border: 1px solid #5a3921;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: width 0.3s ease;
+  }
+
+  .volume-container:hover .volume {
+    width: 80px;
+  }
+
+  .progress::-webkit-slider-thumb,
+  .volume::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 18px;
+    height: 18px;
+    background: #5a3921;
+    border-radius: 50%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+  }
+
+  .volume::-webkit-slider-thumb {
+    width: 14px;
+    height: 14px;
+  }
+
+  .progress::-webkit-slider-thumb:hover,
+  .volume::-webkit-slider-thumb:hover {
+    transform: scale(1.2);
+    background: #8b5a2b;
+  }
+
+
+    .info {
+      text-align: center;
+      color: #5a3921;
+      background: rgba(255, 255, 255, 0.8);
+      padding: 15px;
+      border-radius: 10px;
+      border: 1px dashed #5a3921;
+      max-width: 500px;
+    }
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <div class="card">
+      <div class="top">
+        <div class="left">
+          <div class="controls">
+            <div class="play-btn" id="play"></div>
+          </div>
+          <div class="title">Sabrina Carpenter - Espresso</div>
+        </div>
+        <div class="time" id="duration">0:00 / 2:56</div>
+      </div>
+<div class="progress-container">
+  <div class="progress-wrapper">
+    <input type="range" class="progress" id="progress" value="0" min="0" max="100">
+  </div>
+  <div class="volume-container">
+    <div class="volume-icon">🔈</div>
+    <input type="range" class="volume" id="volume" value="80" min="0" max="100">
+  </div>
+</div>
+    </div>
+
+  </div>
+
+  <!-- MP3 lejátszó -->
+  <audio id="audioPlayer">
+    <source src="/espresso.mp3" type="audio/mpeg">
+    A böngészője nem támogatja az audio elemet.
+  </audio>
+
+  <script>
+    const audioPlayer = document.getElementById("audioPlayer");
+    const playBtn = document.getElementById("play");
+    const progress = document.getElementById("progress");
+    const volumeControl = document.getElementById("volume");
+    const durationDisplay = document.getElementById("duration");
+    let isPlaying = false;
+
+    // Hang beállítása
+    audioPlayer.volume = 0.8;
+
+    // Amikor az audio metaadatai betöltődtek (pl. hossz)
+    audioPlayer.addEventListener('loadedmetadata', function() {
+      const total = audioPlayer.duration;
+      let totalMin = Math.floor(total / 60);
+      let totalSec = Math.floor(total % 60).toString().padStart(2, '0');
+      durationDisplay.textContent = `0:00 / ${totalMin}:${totalSec}`;
+    });
+
+    // Lejátszás/szünet gomb kezelése
+    playBtn.addEventListener("click", () => {
+      if (isPlaying) {
+        audioPlayer.pause();
+        playBtn.className = "play-btn";
+      } else {
+        audioPlayer.play();
+        playBtn.className = "pause-btn";
+      }
+      isPlaying = !isPlaying;
+    });
+
+    // Progress frissítése
+    function updateProgress() {
+      if (!audioPlayer.duration) return;
+      
+      const current = audioPlayer.currentTime;
+      const total = audioPlayer.duration;
+      progress.value = (current / total) * 100;
+
+      // idő kijelzés (perc:másodperc)
+      let minutes = Math.floor(current / 60);
+      let seconds = Math.floor(current % 60).toString().padStart(2, '0');
+      let totalMin = Math.floor(total / 60);
+      let totalSec = Math.floor(total % 60).toString().padStart(2, '0');
+      durationDisplay.textContent = `${minutes}:${seconds} / ${totalMin}:${totalSec}`;
+    }
+
+    // Progress frissítés időzítő
+    setInterval(updateProgress, 500);
+
+    // Keresés a progress bar-ral
+    progress.addEventListener("input", () => {
+      if (!audioPlayer.duration) return;
+      const seekTime = (progress.value / 100) * audioPlayer.duration;
+      audioPlayer.currentTime = seekTime;
+    });
+
+    // Hangerő szabályzás
+    volumeControl.addEventListener("input", () => {
+      audioPlayer.volume = volumeControl.value / 100;
+    });
+
+    // Amikor a zene véget ér, visszaállítás
+    audioPlayer.addEventListener('ended', function() {
+      playBtn.className = "play-btn";
+      isPlaying = false;
+      audioPlayer.currentTime = 0;
+      progress.value = 0;
+      updateProgress();
+    });
+  </script>
+</body>
+</html>
